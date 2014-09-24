@@ -1,0 +1,539 @@
+/* =Typography
+-----------------------------------------------------------------------------*/
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	line-height: $base-line;
+	background: $background-body;
+	color: $color-body;
+}
+
+/* =Links
+-----------------------------------------------------------------------------*/
+a {
+	color: $color-link;
+	&:focus,
+	&:hover {
+		color: $color-link-hover;
+	}
+}
+
+/* =Headings
+-----------------------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-family-headings;
+	font-weight: bold;
+	color: $color-headings;
+	text-rendering: optimizeLegibility;
+}
+h1 {
+	font-size: $font-size-h1-lg;
+	line-height: 1.111em;
+	margin-bottom: $base-line / 2;
+}
+h2 {
+	font-size: $font-size-h2-lg;
+	line-height: 1.111em;
+	margin-bottom: .25em;
+}
+h3 {
+	font-size: $font-size-h3-lg;
+	line-height: 1.333em;
+	margin-bottom: .25em;
+}
+h4 {
+	font-size: $font-size-h4-lg;
+	line-height: 1.5em;
+	margin-bottom: .333em;
+}
+h5 {
+	font-size: $font-size-h5-lg;
+	line-height: $base-line;
+	margin-bottom: .25em;
+}
+h6 {
+	font-size: $font-size-h6-lg;
+	text-transform: uppercase;
+	line-height: $base-line;
+	margin-bottom: .25em;
+}
+
+
+/* =Subheadings
+-----------------------------------------------------------------------------*/
+hgroup h1:first-child,
+hgroup h2:first-child,
+hgroup h3:first-child,
+hgroup h4:first-child,
+hgroup h5:first-child, {
+	margin-bottom: 0;
+}
+h1.subheading,
+h2.subheading,
+h3.subheading,
+h4.subheading,
+h5.subheading {
+	margin-top: 0;
+	font-weight: 300;
+}
+h1.subheading {
+	font-size: $font-size-h1-lg / $subheading-h1-scale;
+}
+h2.subheading {
+	font-size: $font-size-h2-lg / $subheading-h2-scale;
+}
+h3.subheading {
+	font-size: $font-size-h3-lg / $subheading-h3-scale;
+}
+h4.subheading {
+	margin-top: .2em;
+	font-size: $font-size-h4-lg / $subheading-h4-scale;
+}
+h5.subheading {
+	margin-top: .2em;
+	font-size: $font-size-h5-lg / $subheading-h5-scale;
+}
+
+/* =Lead
+-----------------------------------------------------------------------------*/
+.lead {
+	font-size: $font-size-lead;
+	font-weight: 300;
+	line-height: $line-height-lead;
+	margin-bottom: $base-line / 2;
+}
+
+/* =Line height and margin
+-----------------------------------------------------------------------------*/
+p,
+ul,
+ol,
+dl,
+dd,
+dt,
+blockquote,
+td,
+th {
+	line-height: $base-line;
+}
+ul,
+ol,
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin: 0 0 0 $base-line * 2;
+}
+ol ol li {
+	list-style-type: lower-alpha;
+}
+ol ol ol li {
+	list-style-type: lower-roman;
+}
+p,
+ul,
+ol,
+dl,
+blockquote,
+hr,
+pre,
+table,
+form,
+fieldset,
+figure,
+address {
+	margin-bottom: $base-line;
+}
+
+/* =Blockquote
+-----------------------------------------------------------------------------*/
+blockquote {
+	position: relative;
+	font-style: italic;
+	margin-left: $base-line * 1.5;
+	padding-left: $base-line;
+	border-left: 2px solid rgba(0, 0, 0, .15);
+	& p {
+		margin-bottom: .5em;
+	}
+}
+blockquote small,
+cite {
+	color: rgba(0, 0, 0, .4);
+	font-style: italic;
+}
+small,
+blockquote cite {
+	font-size: $font-size-small;
+	line-height: 1;
+}
+
+
+/* =Address
+-----------------------------------------------------------------------------*/
+address {
+	font-style: normal;
+}
+
+/* =Definition list
+-----------------------------------------------------------------------------*/
+dl dt {
+	font-weight: bold;
+}
+dd {
+	margin-left: $base-line / 1.5;
+}
+
+/* =Text-level
+-----------------------------------------------------------------------------*/
+s,
+del {
+	text-decoration: line-through;
+}
+abbr[title],
+dfn[title] {
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+strong,
+b {
+	font-weight: bold;
+}
+em,
+i {
+	font-style: italic;
+}
+sub,
+sup {
+	font-size: $font-size-small-super;
+	line-height: 0;
+	position: relative;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+figcaption {
+	font-size: $font-size-small;
+	font-style: italic;
+}
+ins,
+u {
+	text-decoration: underline;
+}
+mark {
+	background-color: $color-yellow;
+	color: $color-black;
+	text-decoration: none;
+}
+
+/* =Code
+-----------------------------------------------------------------------------*/
+pre,
+code,
+kbd,
+samp,
+var,
+output {
+	font-size: 90%;
+	font-style: normal;
+	font-family: $font-family-code;
+}
+pre {
+	font-size: 90%;
+	line-height: 1.45em;
+	color: $color-body;
+	background: #f6f6f6;
+	padding: $base-line;
+	overflow: auto;
+}
+code,
+samp,
+kbd {
+	padding: 3px 6px 2px 6px;
+	display: inline-block;
+	line-height: 1;
+	border-radius: 2px;
+}
+code {
+	background: #f6f6f6;
+	border: 1px solid #ddd;
+}
+pre code {
+	font-size: 100%;
+	border: none;
+	padding: 0;
+	background: none;
+	line-height: $base-line;
+}
+var {
+	color: rgba(0, 0, 0, .5);
+}
+samp {
+	background: #e9effa;
+	border: 1px solid #c5d4f0;
+}
+kbd {
+	background: $color-black;
+	color: rgba(255, 255, 255, .85);
+	white-space: nowrap;
+}
+
+/* =Form
+-----------------------------------------------------------------------------*/
+button:active,
+button:focus {
+	outline: none;
+}
+button,
+input,
+textarea,
+select {
+	font-family: $font-family-controls;
+	font-size: 1em;
+	box-shadow: none;
+}
+textarea,
+select[multiple],
+select[multiple="multiple"] {
+	padding: .3em .35em;
+	line-height: 1.35em;
+	width: 99.9%;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="phone"],
+input[type="tel"],
+input[type="number"],
+input[type="datetime"],
+input[type="date"],
+input[type="month"],
+input[type="color"],
+input[type="time"],
+input[type="search"],
+input[type="datetime-local"],
+button,
+input[type="submit"],
+input[type="reset"] {
+	padding: .3em .35em;
+	line-height: $base-line;
+	border-radius: 0;
+	outline: none;
+}
+select[multiple],
+select[multiple="multiple"],
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="phone"],
+input[type="tel"],
+input[type="number"],
+input[type="datetime"],
+input[type="date"],
+input[type="month"],
+input[type="color"],
+input[type="time"],
+input[type="search"],
+input[type="datetime-local"] {
+	background: #fff;
+	border: 1px solid #bbbcc0;
+	position: relative;
+	z-index: 2;
+	-webkit-appearance: none;
+}
+button,
+input[type="submit"],
+input[type="reset"] {
+	font-weight: 400;
+	padding: .3em 1.3em;
+	border: 1px solid transparent;
+	color: $color-body;
+	background: #eeeded;
+	cursor: pointer;
+	border-radius: 2px;
+	-webkit-appearance: none;
+	&:hover {
+		color: rgba(0, 0, 0, .5);
+		background: #dbdada;
+	}
+}
+button[disabled],
+input[type="submit"][disabled],
+input[type="reset"][disabled] {
+	background: none;
+	background: #dbdada;
+	cursor: default;
+	color: rgba(0, 0, 0, .5);
+	&:hover {
+		color: rgba(0, 0, 0, .5);
+	}
+}
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+input[type="range"] {
+	position: relative;
+	top: 3px;
+}
+input[disabled] {
+	background: #f4f4f4;
+	border: 1px solid #ddd;
+	color: rgba(0, 0, 0, .4);
+}
+select {
+	margin-bottom: 0 !important;
+}
+fieldset {
+	padding: $base-line;
+	margin-bottom: $base-line;
+	border: 1px solid #ddd;
+	& *:last-child {
+		margin-bottom: 0 !important;
+	}
+}
+legend {
+	font-weight: bold;
+	padding: 0 1em;
+	margin-left: -1em;
+}
+
+
+/* =Tables
+-----------------------------------------------------------------------------*/
+table {
+	max-width: 100%;
+	width: 100%;
+	empty-cells: show;
+
+	caption {
+		text-transform: uppercase;
+		padding: 0 $base-line / 1.5;
+		color: rgba(0, 0, 0, .4);
+		font-size: $font-size-small;
+	}
+
+	th,
+	td {
+		border-bottom: 1px solid #eee;
+		padding: $base-line / 2 $base-line / 1.5;
+	}
+
+	tfoot th,
+	tfoot td {
+		background: #f4f4f4;
+	}
+}
+
+/* =Responsive
+-----------------------------------------------------------------------------*/
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	h1 {
+		font-size: $font-size-h1-md;
+		line-height: 1.125;
+	}
+	h2 {
+		font-size: $font-size-h2-md;
+		line-height: 1.25;
+	}
+	h3 {
+		font-size: $font-size-h3-md;
+		line-height: 1.25;
+	}
+	h4 {
+		font-size: $font-size-h4-md;
+		line-height: 1.22222222;
+	}
+	h5 {
+		font-size: $font-size-h5-md;
+	}
+	h6 {
+		font-size: $font-size-h6-md;
+	}
+	h1.subheading {
+		font-size: $font-size-h1-md / $subheading-h1-scale;
+	}
+	h2.subheading {
+		font-size: $font-size-h2-md / $subheading-h2-scale;
+	}
+	h3.subheading {
+		font-size: $font-size-h3-md / $subheading-h3-scale;
+	}
+	h4.subheading {
+		font-size: $font-size-h4-md / $subheading-h4-scale;
+	}
+	h5.subheading {
+		font-size: $font-size-h5-md / $subheading-h5-scale;
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	h1 {
+		font-size: $font-size-h1-sm;
+		line-height: 1.25;
+	}
+	h2 {
+		font-size: $font-size-h2-sm;
+		line-height: 1.15384615;
+	}
+	h3 {
+		font-size: $font-size-h3-sm;
+		line-height: 1.13636364;
+	}
+	h4 {
+		font-size: $font-size-h4-sm;
+		line-height: 1.11111111;
+	}
+	h5 {
+		font-size: $font-size-h5-sm;
+	}
+	h6 {
+		font-size: $font-size-h6-sm;
+	}
+	h1.subheading {
+		font-size: $font-size-h1-sm / $subheading-h1-scale;
+	}
+	h2.subheading {
+		font-size: $font-size-h2-sm / $subheading-h2-scale;
+	}
+	h3.subheading {
+		font-size: $font-size-h3-sm / $subheading-h3-scale;
+	}
+	h4.subheading {
+		font-size: $font-size-h4-sm / $subheading-h4-scale;
+	}
+	h5.subheading {
+		font-size: $font-size-h5-sm / $subheading-h5-scale;
+	}
+	.lead {
+		font-size: 1.2em;
+	}
+	ul,
+	ol,
+	ul ul,
+	ol ol,
+	ul ol,
+	ol ul {
+		margin-left: $base-line;
+	}
+	blockquote {
+		margin-left: 0;
+	}
+}
+
+

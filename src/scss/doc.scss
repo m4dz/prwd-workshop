@@ -1,0 +1,9 @@
+@import "kube/kube";
+
+@media screen {
+    @import "doc/screen";
+}
+
+@media print {
+    @import "doc/print";
+}

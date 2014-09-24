@@ -1,0 +1,57 @@
+---
+title: RWD and Performance Workshop
+layout: doc.hbs
+---
+
+<div id="page">
+	<header>
+		<h1>{{ page.title }}</h1>
+		<p class="lead"><a href="./doc/">Voir la documentation</a></p>
+	</header>
+
+	<table class="table-stripped">
+		<caption>Conformité et affichage</caption>
+		<thead>
+			<tr>
+				<th>Maquette</th>
+				<th>Validation <abbr>HTML</abbr></th>
+				<th><abbr title="Internet Explorer">IE</abbr> 8</th>
+				<th><abbr title="Internet Explorer">IE</abbr> 9</th>
+				<th><abbr title="Internet Explorer">IE</abbr> 10</th>
+				<th>Opera</th>
+				<th>Chrome</th>
+				<th>Safari</th>
+				<th><abbr title="Firefox">Fx</abbr></th>
+				<th>Lynx <sup id="fnref:1"><a href="#fn:1">1</a></sup></th>
+				<th>Impression</th>
+				<th>Mobile</th>
+				<th>Tablette</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each pages}}
+				{{#isnt data.layout "doc.hbs"}}
+				<tr>
+					<td><a href="{{ relative ../../page.dest dest }}">{{ data.title }}</a></td>
+					<td><span class="label label-outline label-green">{{ data.valid }}</span></td>
+					<td><span class="label label-outline">{{ data.ie8 }}</span></td>
+					<td><span class="label label-outline">{{ data.ie9 }}</span></td>
+					<td><span class="label label-outline">{{ data.ie10 }}</span></td>
+					<td><span class="label label-outline">{{ data.opera }}</span></td>
+					<td><span class="label label-outline">{{ data.chrome }}</span></td>
+					<td><span class="label label-outline">{{ data.safari }}</span></td>
+					<td><span class="label label-outline">{{ data.firefox }}</span></td>
+					<td><span class="label label-outline">{{ data.lynx }}</span></td>
+					<td><span class="label label-outline">{{ data.print }}</span></td>
+					<td><span class="label label-outline">{{ data.mobile }}</span></td>
+					<td><span class="label label-outline">{{ data.tablet }}</span></td>
+				</tr>
+				{{/isnt}}
+			{{/each}}
+		</tbody>
+	</table>
+
+	<footer>
+		<p class="footnotes"><small>[1]: Hors erreurs de validation liées aux recommandations SEO.</small></p>
+	</footer>
+</div>

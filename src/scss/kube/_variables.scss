@@ -1,0 +1,80 @@
+// Font
+$font-family-base: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+$font-family-headings: $font-family-base;
+$font-family-controls: $font-family-base;
+$font-family-code: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// Grid
+$grid-width: 1000;
+$grid-gutter-width: 30;
+
+// Base color
+$background-body: #fff;
+$color-body: #333;
+$color-headings: #222;
+
+// Type
+$font-size-print: 12pt;
+$font-size-base: .85em; // .85em = 14px by default
+$base-line: 1.618em;
+
+// Font size and line height
+$font-size-lead: 1.35em;
+$line-height-lead: 1.35em;
+
+$font-size-big: 1.25em;
+$font-size-small: .85em;
+$font-size-small-super: .65em;
+
+
+// Headings
+
+// subheadings
+$subheading-h1-scale: 1.5;
+$subheading-h2-scale: 1.5;
+$subheading-h3-scale: 1.5;
+$subheading-h4-scale: 1.2;
+$subheading-h5-scale: 1.125;
+
+// print
+$font-size-h1-print: 36pt;
+$font-size-h2-print: 24pt;
+$font-size-h3-print: 18pt;
+$font-size-h4-print: 14pt;
+$font-size-h5-print: 12pt;
+$font-size-h6-print: 12pt;
+
+// Large desktop
+$font-size-h1-lg: $font-size-base * 2.5;
+$font-size-h2-lg: $font-size-base * 2;
+$font-size-h3-lg: $font-size-base * 1.7;
+$font-size-h4-lg: $font-size-base * 1.3;
+$font-size-h5-lg: $font-size-base * 1;
+$font-size-h6-lg: $font-size-base * 0.85;
+
+// Portrait tablet to landscape and desktop
+$font-size-h1-md: $font-size-base * 2.5;
+$font-size-h2-md: $font-size-base * 2;
+$font-size-h3-md: $font-size-base * 1.7;
+$font-size-h4-md: $font-size-base * 1.3;
+$font-size-h5-md: $font-size-base * 1;
+$font-size-h6-md: $font-size-base * 0.85;
+
+// Landscape phone to portrait tablet
+$font-size-h1-sm: $font-size-base * 2;
+$font-size-h2-sm: $font-size-base * 1.5;
+$font-size-h3-sm: $font-size-base * 1.375;
+$font-size-h4-sm: $font-size-base * 1.125;
+$font-size-h5-sm: $font-size-base * 1;
+$font-size-h6-sm: $font-size-base * 0.85;
+
+// Colors
+$color-black: #0f0f0f;
+$color-blue: #3d58a8;
+$color-red: #d70a16;
+$color-green: #159776;
+$color-yellow: #fddc43;
+
+// LinkColor
+$color-link: #3570c3;
+$color-link-hover: $color-red;
