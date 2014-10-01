@@ -21,12 +21,22 @@ module.exports = (grunt) ->
       assets:
         expand : true
         cwd    : 'src/'
-        src    : ['files/**', 'fonts/**','img/**','*.{png,ico}']
+        src    : ['files/**', 'fonts/**','images/**','*.{png,ico}']
         dest   : 'build/'
       libs:
         expand : true
         cwd    : 'src/'
         src    : ['js/lib/**']
+        dest   : 'build/'
+      themecss:
+        expand : true
+        cwd    : 'src/'
+        src    : ['css/**']
+        dest   : 'build/'
+      themejs:
+        expand : true
+        cwd    : 'src/'
+        src    : ['js/**']
         dest   : 'build/'
 
     # Assembling
@@ -161,10 +171,10 @@ module.exports = (grunt) ->
         livereload: true
         atBegin: true
       css:
-        files: ['src/scss/**/*.scss']
-        tasks: ['assets', 'compass:watch']
+        files: ['src/scss/**/*.scss', 'src/css/**/*.css']
+        tasks: ['assets', 'compass:watch', 'copy:themecss']
       js:
-        files: ['src/js/templates/**/*.tpl','src/js/**/*.js','Requirefile.js']
+        files: ['src/js/templates/**/*.tpl','src/js/**/*.js']
         tasks: ['js']
       html:
         files: ['src/tpl/**/*.{md,hbs,html}']
@@ -181,8 +191,8 @@ module.exports = (grunt) ->
   grunt.registerTask 'libs', ['modernizr']
   grunt.registerTask 'assets', ['clean:assets','clean:css','copy:assets']
 
-  grunt.registerTask 'css', ['assets','compass:compile']
-  grunt.registerTask 'js', ['clean:js','clean:tpl','libs','copy:libs','requirejs:compile']
+  grunt.registerTask 'css', ['assets','compass:compile', 'copy:themecss']
+  grunt.registerTask 'js', ['clean:js','clean:tpl','libs','copy:libs', 'copy:themejs']
   grunt.registerTask 'html', ['clean:html','assemble:pages']
 
   grunt.registerTask 'build', ['clean:all','libs','jshint','js','css','html']
