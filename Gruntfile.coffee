@@ -1,22 +1,22 @@
 module.exports = (grunt) ->
 
-    # HELPERS
-    # ============================================================================
-    getDeployMessage = ->
-      if not process.env.TRAVIS
-        return """
-               missing env vars for travis-ci
-
-               """
-
+  # HELPERS
+  # ============================================================================
+  getDeployMessage = ->
+    if not process.env.TRAVIS
       return """
-             Branch: #{ process.env.TRAVIS_BRANCH }
-             SHA: #{ process.env.TRAVIS_COMMIT }
-             Range SHA: #{ process.env.TRAVIS_COMMIT_RANGE }
-             Build id: #{ process.env.TRAVIS_BUILD_ID }
-             Build number: #{ process.env.TRAVIS_BUILD_NUMBER }
+             missing env vars for travis-ci
 
              """
+
+    return """
+           Branch: #{ process.env.TRAVIS_BRANCH }
+           SHA: #{ process.env.TRAVIS_COMMIT }
+           Range SHA: #{ process.env.TRAVIS_COMMIT_RANGE }
+           Build id: #{ process.env.TRAVIS_BUILD_ID }
+           Build number: #{ process.env.TRAVIS_BUILD_NUMBER }
+
+           """
 
   # TASKS
   # ============================================================================
@@ -220,6 +220,15 @@ module.exports = (grunt) ->
   require('matchdep').filterDev('grunt-*').forEach grunt.loadNpmTasks
   grunt.loadNpmTasks 'assemble'
 
+
+  grunt.registerTask 'travis-deploy', ->
+    this.requires ['build']
+    if process.env.TRAVIS and process.env.TRAVIS_SECURE_ENV_VARS and not process.env.TRAVIS_PULL_REQUEST
+      grunt.log.writeln 'deploy'
+      grunt.task.run 'gh-pages:deploy'
+    else
+      grunt.log.writeln 'skip deploy'
+
   grunt.registerTask 'live', ['connect:basic','watch']
 
   grunt.registerTask 'libs', ['modernizr']
@@ -231,12 +240,4 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'build', ['clean:all','libs','jshint','js','css','html']
   grunt.registerTask 'snapshot', ['build', 'compress:build']
-  grunt.registerTask 'deploy', 'Publish from Travis', ['build', 'travis-deploy']
-
-  grunt.registerTask 'travis-deploy', ->
-    this.requires ['build']
-    if process.env.TRAVIS and process.env.TRAVIS_SECURE_ENV_VARS and not process.env.TRAVIS_PULL_REQUEST
-      grunt.log.writeln 'deploy'
-      grunt.task.run 'gh-pages:deploy'
-    else
-      grunt.log.writeln 'skip deploy'
+  grunt.registerTask 'deploy', ['build', 'travis-deploy']
