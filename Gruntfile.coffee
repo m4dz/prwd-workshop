@@ -186,7 +186,7 @@ module.exports = (grunt) ->
                    deploy to gh-pages (auto)
                    #{getDeployMessage()}
                    """
-          slient: true
+          silent: true
         src: ['**/*']
 
     # Livereload
