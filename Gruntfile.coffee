@@ -174,7 +174,7 @@ module.exports = (grunt) ->
 
     # Continuous Deploy
     #------------------
-    gh-pages:
+    'gh-pages':
       options:
         branch: 'gh-pages'
         base: 'build'
