@@ -179,13 +179,14 @@ module.exports = (grunt) ->
       deploy:
         options:
           user:
-            name: 'Travis for m4dz',
+            name: 'Travis for m4dz'
             email: 'code@m4dz.net'
-          repo: "https://#{process.env.GH_TOKEN}@github.com:m4dz/prwd-workshop.git",
+          repo: "https://#{process.env.GH_TOKEN}@github.com/m4dz/prwd-workshop.git"
           message: """
                    deploy to gh-pages (auto)
                    #{getDeployMessage()}
                    """
+          slient: true
         src: ['**/*']
 
     # Livereload
