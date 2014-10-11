@@ -1,5 +1,23 @@
 module.exports = (grunt) ->
 
+    # HELPERS
+    # ============================================================================
+    getDeployMessage = ->
+      if not process.env.TRAVIS
+        return """
+               missing env vars for travis-ci
+
+               """
+
+      return """
+             Branch: #{ process.env.TRAVIS_BRANCH }
+             SHA: #{ process.env.TRAVIS_COMMIT }
+             Range SHA: #{ process.env.TRAVIS_COMMIT_RANGE }
+             Build id: #{ process.env.TRAVIS_BUILD_ID }
+             Build number: #{ process.env.TRAVIS_BUILD_NUMBER }
+
+             """
+
   # TASKS
   # ============================================================================
   grunt.initConfig
@@ -154,6 +172,22 @@ module.exports = (grunt) ->
           dest: './'
         }]
 
+    # Continuous Deploy
+    #------------------
+    gh-pages:
+      options:
+        branch: 'gh-pages'
+        base: 'build'
+      deploy:
+        options:
+          user:
+            name: 'Travis for m4dz',
+            email: 'code@m4dz.net'
+          repo: 'https://' + process.env.GH_TOKEN + '@github.com:m4dz/prwd-workshop.git',
+          message: 'deploy to gh-pages (auto)' + getDeployMessage(),
+          silent: true
+        src: ['**/*']
+
     # Livereload
     # ----------
     connect:
@@ -197,3 +231,12 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'build', ['clean:all','libs','jshint','js','css','html']
   grunt.registerTask 'snapshot', ['build', 'compress:build']
+  grunt.registerTask 'deploy', 'Publish from Travis', ['build', 'travis-deploy']
+
+  grunt.registerTask 'travis-deploy', ->
+    this.requires ['build']
+    if process.env.TRAVIS and process.env.TRAVIS_SECURE_ENV_VARS and not process.env.TRAVIS_PULL_REQUEST
+      grunt.log.writeln 'deploy'
+      grunt.task.run 'gh-pages:deploy'
+    else
+      grunt.log.writeln 'skip deploy'
