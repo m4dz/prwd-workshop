@@ -238,6 +238,6 @@ module.exports = (grunt) ->
   grunt.registerTask 'js', ['clean:js','clean:tpl','libs','copy:libs', 'copy:themejs']
   grunt.registerTask 'html', ['clean:html','assemble:pages']
 
-  grunt.registerTask 'build', ['clean:all','libs','jshint','js','css','html']
+  grunt.registerTask 'build', ['clean:all','libs','js','css','html']
   grunt.registerTask 'snapshot', ['build', 'compress:build']
   grunt.registerTask 'deploy', ['build', 'travis-deploy']
