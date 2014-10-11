@@ -6,7 +6,6 @@ module.exports = (grunt) ->
     if not process.env.TRAVIS
       return """
              missing env vars for travis-ci
-
              """
 
     return """
@@ -15,7 +14,6 @@ module.exports = (grunt) ->
            Range SHA: #{ process.env.TRAVIS_COMMIT_RANGE }
            Build id: #{ process.env.TRAVIS_BUILD_ID }
            Build number: #{ process.env.TRAVIS_BUILD_NUMBER }
-
            """
 
   # TASKS
@@ -183,8 +181,11 @@ module.exports = (grunt) ->
           user:
             name: 'Travis for m4dz',
             email: 'code@m4dz.net'
-          repo: 'https://' + process.env.GH_TOKEN + '@github.com:m4dz/prwd-workshop.git',
-          message: 'deploy to gh-pages (auto)' + getDeployMessage(),
+          repo: "https://#{process.env.GH_TOKEN}@github.com:m4dz/prwd-workshop.git",
+          message: """
+                   deploy to gh-pages (auto)
+                   #{getDeployMessage()}
+                   """,
           silent: true
         src: ['**/*']
 
@@ -219,6 +220,7 @@ module.exports = (grunt) ->
   # ============================================================================
   require('matchdep').filterDev('grunt-*').forEach grunt.loadNpmTasks
   grunt.loadNpmTasks 'assemble'
+  grunt.loadNpmTasks 'grunt-gh-pages'
 
 
   grunt.registerTask 'travis-deploy', ->
