@@ -223,7 +223,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'travis-deploy', ->
     this.requires ['build']
-    if process.env.TRAVIS and process.env.TRAVIS_SECURE_ENV_VARS and not process.env.TRAVIS_PULL_REQUEST
+    if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true' and process.env.TRAVIS_PULL_REQUEST is 'false'
       grunt.log.writeln 'deploy'
       grunt.task.run 'gh-pages:deploy'
     else
