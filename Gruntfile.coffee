@@ -220,8 +220,6 @@ module.exports = (grunt) ->
   # ============================================================================
   require('matchdep').filterDev('grunt-*').forEach grunt.loadNpmTasks
   grunt.loadNpmTasks 'assemble'
-  grunt.loadNpmTasks 'grunt-gh-pages'
-
 
   grunt.registerTask 'travis-deploy', ->
     this.requires ['build']
