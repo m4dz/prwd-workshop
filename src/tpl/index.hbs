@@ -1,6 +1,6 @@
 ---
 title: RWD and Performance Workshop
-layout: doc.hbs
+layout: doc
 ---
 
 <div id="page">
@@ -30,7 +30,7 @@ layout: doc.hbs
 		</thead>
 		<tbody>
 			{{#each pages}}
-				{{#isnt data.layout "doc.hbs"}}
+				{{#isnt data.layout "doc"}}
 				<tr>
 					<td><a href="{{ relative ../../page.dest dest }}">{{ data.title }}</a></td>
 					<td><span class="label label-outline label-green">{{ data.valid }}</span></td>

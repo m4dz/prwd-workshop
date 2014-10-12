@@ -60,11 +60,11 @@ module.exports = (grunt) ->
     assemble:
       options:
         assets    : 'build/'
-        data      : ['src/tpl/_data/**/*.{json,yml}', 'package.json'],
+        data      : ['src/tpl/_data/**/*.{json,yml}','package.json'],
         helpers   : ['src/tpl/_helpers/**/*.js','node_modules/prettify/prettify.js']
         partials  : ['src/tpl/_includes/**/*.{md,html,hbs}','src/tpl/pages/**/*-ajax-*.{md,html,hbs}','src/tpl/pages/**/pop-*.{md,html,hbs}']
         layoutdir : 'src/tpl/_layouts'
-        layout    : 'default.hbs'
+        layoutext : '.hbs'
 
         # Prettify helpers configuration
         prettify:
@@ -76,7 +76,7 @@ module.exports = (grunt) ->
         files: [{
           expand : true
           cwd    : 'src/tpl/'
-          src    : ['index.hbs','**/*.{md,html,hbs}','!_**/*','!**/_*']
+          src    : ['index.hbs','pages/**/*.{md,html,hbs}']
           dest   : 'build/'
           ext    : '.html'
         }]
@@ -121,7 +121,7 @@ module.exports = (grunt) ->
     jshint:
       options:
         jshintrc : '.jshintrc'
-      files: ['src/js/**/*.js','!src/js/lib/**/*.js']
+      files: ['src/js/**/*.js','!src/js/**/lib/**/*.js']
 
     # JS Compiling
     # ------------

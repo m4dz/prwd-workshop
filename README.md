@@ -45,7 +45,57 @@ $ npm install
 
 ### Isoler sa proposition
 
-{ A documenter, des changements de process sont à venir dans la structure. }
+La structure de fichiers est définie telle qu'illustré ci-dessous. Pour isoler chaque proposition, on nommera sa piste, et ce nom générique servira à constituer l'arborescence.
+
+Un exemple valant tous les bons discours, voilà comment ça fonctionne : la source originale issue du template HTML5UP - Prologue est logée derrière le préfixe `origin`.
+
+```shell
+-- build                      # La sortie compilée
+`- src                        # Les sources
+   |- css                     # Les CSS précompilées
+   |  `- origin               # Les CSS liées à la version 'origin'
+   |- js                      # Les sources JavaScript
+   |  `- origin               # Les sources JS liées à la version 'origin'
+   |- scss                    # Les sources SASS / Compass
+   `- tpl                     # Les gabarits handlebars / assemble.io
+      |- _includes            # Les partials utilisés dans les gabarits
+      |  `- origin_*.hbs      # Les partials utilisés dans la version 'origin'
+      |- _layouts             # Les layouts handlebars
+      |  |- doc.hbs           # Le Layout de documentation
+      |  `- origin.hbs        # Le layout utilisé dans la version 'origin'
+      `- pages                # Les pages à compiler
+         `- origin.hbs        # La page source de la version 'origin'
+```
+
+Pour développer votre proposition d'amélioration, nous vous conseillons de partir de la version `origin` et de ses _assets_ et d'y effectuer vos modifications. Par exemple, mettons que vous souhaitiez réaliser une amélioration concernant les breakpoints, en créant une version SASS des styles, et intervenant également sur les JS. Vous choisissez le nom de version `breakpoints` et votre arborescence devrait ressembler à :
+
+```shell
+-- build
+`- src
+   |- css
+   |  `- origin
+   |- js
+   |  |- breakpoints            # Copie du répartoire js/origin dans laquelle 
+   |  |                         # vous isolez vos modifications
+   |  `- origin
+   |- scss
+   |  `- breakpoints            # Vos sources SASS liées à vos améliorations
+   `- tpl
+      |- _includes
+      |  |- breakpoints_*.hbs   # Les partials utilisés dans votre version
+      |  `- origin_*.hbs
+      |- _layouts
+      |  |- breakpoints.hbs     # Le layout de votre version, copié depuis
+      |  |                      # origin.hbs
+      |  |- doc.hbs
+      |  `- origin.hbs
+      `- pages
+         |- breakpoints.hbs     # Votre page copiée depuis origin.hbs
+         `- origin.hbs
+```
+
+De cette façon, nous obtiendrons dans la build finale un ensemble de pages, chacune correspondant à une évolution de version, et disposant de ses propres assets, ce qui nous permettra de réaliser des mesures comparées.
+
 
 ### Tester
 
