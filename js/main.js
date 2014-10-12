@@ -1,9 +1,0 @@
-require.config({
-  paths: {
-
-  },
-
-  shim: {
-
-  }
-});
