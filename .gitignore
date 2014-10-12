@@ -9,6 +9,4 @@ bower_components
 build
 build-*
 
-lib
-
 !.gitkeep

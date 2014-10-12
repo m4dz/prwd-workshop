@@ -229,15 +229,14 @@ module.exports = (grunt) ->
     else
       grunt.log.writeln 'skip deploy'
 
-  grunt.registerTask 'live', ['connect:basic','watch']
-
-  grunt.registerTask 'libs', ['modernizr']
+  grunt.registerTask 'libs', ['modernizr','copy:libs']
   grunt.registerTask 'assets', ['clean:assets','clean:css','copy:assets']
 
-  grunt.registerTask 'css', ['assets','compass:compile', 'copy:themecss']
-  grunt.registerTask 'js', ['clean:js','clean:tpl','libs','copy:libs', 'copy:themejs']
+  grunt.registerTask 'css', ['assets','compass:compile','copy:themecss']
+  grunt.registerTask 'js', ['clean:js','clean:tpl','libs','jshint','copy:themejs']
   grunt.registerTask 'html', ['clean:html','assemble:pages']
 
-  grunt.registerTask 'build', ['clean:all','libs','js','css','html']
+  grunt.registerTask 'live', ['connect:basic','watch']
+  grunt.registerTask 'build', ['clean:all','js','css','html']
   grunt.registerTask 'snapshot', ['build', 'compress:build']
   grunt.registerTask 'deploy', ['build', 'travis-deploy']

@@ -19,7 +19,9 @@
     "predef"        : [  // Extra globals.
         "require",
         "define",
-        "notify"
+        "notify",
+        "skel",
+        "assets"
     ],
 
     // Development.
