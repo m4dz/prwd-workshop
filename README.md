@@ -2,6 +2,7 @@ PRWD Workshop
 =============
 
 Paris Web 2014, Ateliers.
+[![Build Status](https://travis-ci.org/m4dz/prwd-workshop.svg?branch=master,osx)](https://travis-ci.org/m4dz/prwd-workshop)
 
 
 Objectif
