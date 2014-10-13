@@ -12,6 +12,7 @@ Links
 ### RWD performance
 
 - [How we make RWD sites load fast as heck](http://www.filamentgroup.com/lab/performance-rwd.html) by Scott Jehl from Filament Group
+- [Improving Smashing Magazine’s Performance: A Case Study](http://www.smashingmagazine.com/2014/09/08/improving-smashing-magazine-performance-case-study/) by Vitaly Friedman
 
 Books
 -----
