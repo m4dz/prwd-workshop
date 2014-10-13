@@ -8,7 +8,7 @@ Paris Web 2014, Ateliers.
 Objectif
 --------
 
-Un site en Responsive Web Design peut-il être performant ? On se pose souvent la question, cet atelier va tâcher d'y répondre de façon collaborative. Nous partons d'une base de travail commune, tirée du template HTML5UP mis à disposition ici : http://html5up.net/prologue.
+Un site en Responsive Web Design peut-il être performant ? On se pose souvent la question, cet atelier va tâcher d'y répondre de façon collaborative. Nous partons d'une base de travail commune, tirée du template [HTML5UP](http://html5up.net/) mis à disposition ici : http://html5up.net/prologue.
 
 L'objectif va être de procéder à des optimisations tant sur le plan du _responsive_ que des performances, puis de procéder à des mesures comparées pour déterminer si les pistes _bonnes pratiques / rwd / performances_ peuvent être efficacement utilisées.
 
@@ -37,6 +37,16 @@ L'objectif de l'atelier est d'être participatif. Nous avons des idées d'optimi
 **Si vous avez une idée mais si vous ne savez malheureusement pas comment la mettre en œuvre**, [créez une issue](https://github.com/m4dz/prwd-workshop/issues/new) pour la décrire le plus précisément possible, avec des liens vers des ressources externes si nécessaire/possible.
 
 **Si vous savez mettre en œuvre votre idée**, c'est encore mieux, faites donc, et créez la Pull-Request associée. Chaque Pull-Request validée au cours de l'atelier se verra _mergée_ dans la branche `master`, ce qui provoquera son déploiement sur l'environnement de tests http://m4dz.github.io/prwd-workshop/ et procédera aux mesures de performances.
+
+### Quelques règles à respecter
+
+Même s'il faudrait dans l'absolu que ce soit fait, il n'est pas question dans le cadre de l'atelier Paris Web, en durée restreinte,  d'appliquer toutes les règles classiques d'optimisation de performances.
+
+L'idée de cet atelier est d'aboutir à un ensemble de **recommandations d'optimisation des performances spécifiques aux sites responsives**, et du même coup une version performante du thème utilisé, qui restera distribué sous licence.
+
+Sachant cela, quelques règles doivent être respectées :
+- les propositions ne doivent pas altérer l'accessibilité du thème (mais elles peuvent l'améliorer)
+- les propositions doivent respecter le principe d'amélioration progressive, toute présentation particulière CSS et tout fonctionnement JavaScript étant des enrichissements et non des nécessités
 
 ### Proposer une piste
 
