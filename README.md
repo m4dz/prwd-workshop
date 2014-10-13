@@ -32,7 +32,11 @@ Reportez-vous à votre documentation OS pour installer ces pré-requis.
 Participation
 -------------
 
-L'objectif de l'atelier est d'être participatif. Nous avons des idées d'optimisations, mais celles de tous sont bienvenues, au contraire. Nous utiliserons les [Pull-Requests](https://help.github.com/articles/using-pull-requests/) de GitHub pour que chacun des participants (nous-même également) puisse proposer ses améliorations. Chaque Pull-Request validée au cours de l'atelier se verra _mergée_ dans la branche `master`, ce qui provoquera son déploiement sur l'environnement de tests http://m4dz.github.io/prwd-workshop/ et procédera aux mesures de performances.
+L'objectif de l'atelier est d'être participatif. Nous avons des idées d'optimisations, mais celles de tous sont bienvenues, au contraire. Nous utiliserons les [Issues](https://help.github.com/articles/creating-an-issue/) et [Pull-Requests](https://help.github.com/articles/using-pull-requests/) de GitHub pour que chacun des participants (nous-même également) puisse proposer ses améliorations.
+
+**Si vous avez une idée mais si vous ne savez malheureusement pas comment la mettre en œuvre**, [créez une issue](https://github.com/m4dz/prwd-workshop/issues/new) pour la décrire le plus précisément possible, avec des liens vers des ressources externes si nécessaire/possible.
+
+**Si vous savez mettre en œuvre votre idée**, c'est encore mieux, faites donc, et créez la Pull-Request associée. Chaque Pull-Request validée au cours de l'atelier se verra _mergée_ dans la branche `master`, ce qui provoquera son déploiement sur l'environnement de tests http://m4dz.github.io/prwd-workshop/ et procédera aux mesures de performances.
 
 ### Proposer une piste
 
