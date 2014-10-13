@@ -10,3 +10,5 @@ build
 build-*
 
 !.gitkeep
+
+*.sublime-*
