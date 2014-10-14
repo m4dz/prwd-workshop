@@ -193,7 +193,7 @@ module.exports = (grunt) ->
                    deploy to gh-pages (auto)
                    #{getDeployMessage()}
                    """
-          silent: true
+          silent: false
         src: ['**/*']
 
     # Test / Perfs
