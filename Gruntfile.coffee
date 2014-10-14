@@ -188,12 +188,12 @@ module.exports = (grunt) ->
           user:
             name: 'Travis for m4dz'
             email: 'code@m4dz.net'
-          repo: 'https://#{process.env.GH_TOKEN}@github.com/m4dz/prwd-workshop.git'
+          repo: "https://#{process.env.GH_TOKEN}@github.com/m4dz/prwd-workshop.git"
           message: """
                    deploy to gh-pages (auto)
                    #{getDeployMessage()}
                    """
-          silent: false
+          silent: true
         src: ['**/*']
 
     # Test / Perfs
@@ -202,7 +202,7 @@ module.exports = (grunt) ->
       desktop:
         options:
           reporters: [ 'json', 'console']
-          key: 'AIzaSyDQ6G8TbTbSDfHCZHvRB_aWalOycgNdTpo'
+          key: process.env.GAPI_TOKEN
           url: 'http://m4dz.github.io/prwd-workshop/pages'
           paths: pageslist
           locale: 'en_US'
@@ -212,7 +212,7 @@ module.exports = (grunt) ->
       mobile:
         options:
           reporters: [ 'json', 'console']
-          key: 'AIzaSyDQ6G8TbTbSDfHCZHvRB_aWalOycgNdTpo'
+          key: process.env.GAPI_TOKEN
           url: 'http://m4dz.github.io/prwd-workshop/pages'
           paths: pageslist
           locale: 'en_US'
