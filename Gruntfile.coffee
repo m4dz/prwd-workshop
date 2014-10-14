@@ -16,6 +16,13 @@ module.exports = (grunt) ->
            Build number: #{ process.env.TRAVIS_BUILD_NUMBER }
            """
 
+  pageslist = do ->
+    opts =
+      cwd: 'src/tpl/pages'
+    grunt.file.expand(opts, '*.hbs').map (name) ->
+      "/#{name.replace('hbs', 'html')}"
+
+
   # TASKS
   # ============================================================================
   grunt.initConfig
@@ -181,13 +188,37 @@ module.exports = (grunt) ->
           user:
             name: 'Travis for m4dz'
             email: 'code@m4dz.net'
-          repo: "https://#{process.env.GH_TOKEN}@github.com/m4dz/prwd-workshop.git"
+          repo: 'https://#{process.env.GH_TOKEN}@github.com/m4dz/prwd-workshop.git'
           message: """
                    deploy to gh-pages (auto)
                    #{getDeployMessage()}
                    """
           silent: true
         src: ['**/*']
+
+    # Test / Perfs
+    # ------------
+    pagespeed_report:
+      desktop:
+        options:
+          reporters: [ 'json', 'console']
+          key: 'AIzaSyDQ6G8TbTbSDfHCZHvRB_aWalOycgNdTpo'
+          url: 'http://m4dz.github.io/prwd-workshop/pages'
+          paths: pageslist
+          locale: 'en_US'
+          strategy: 'desktop'
+          threshold: 80
+          dest: 'build/reports'
+      mobile:
+        options:
+          reporters: [ 'json', 'console']
+          key: 'AIzaSyDQ6G8TbTbSDfHCZHvRB_aWalOycgNdTpo'
+          url: 'http://m4dz.github.io/prwd-workshop/pages'
+          paths: pageslist
+          locale: 'en_US'
+          strategy: 'mobile'
+          threshold: 80
+          dest: 'build/reports'
 
     # Livereload
     # ----------
@@ -226,6 +257,9 @@ module.exports = (grunt) ->
     if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true' and process.env.TRAVIS_PULL_REQUEST is 'false'
       grunt.log.writeln 'deploy'
       grunt.task.run 'gh-pages:deploy'
+      grunt.task.run 'pagespeed_report'
+      grunt.task.run 'gh-pages:deploy'
+
     else
       grunt.log.writeln 'skip deploy'
 

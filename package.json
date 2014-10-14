@@ -25,6 +25,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-gh-pages": "^0.9.1",
     "grunt-modernizr": "^0.5.2",
+    "grunt-pagespeed-report": "git+https://github.com/lwhiteley/grunt-pagespeed-report.git",
     "matchdep": "^0.3.0",
     "prettify": "^0.1.7"
   }
