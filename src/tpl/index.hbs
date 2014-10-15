@@ -14,18 +14,18 @@ layout: doc
 		<thead>
 			<tr>
 				<th>Maquette</th>
-				<th>Validation <abbr>HTML</abbr></th>
-				<th><abbr title="Internet Explorer">IE</abbr> 8</th>
-				<th><abbr title="Internet Explorer">IE</abbr> 9</th>
-				<th><abbr title="Internet Explorer">IE</abbr> 10</th>
-				<th>Opera</th>
-				<th>Chrome</th>
-				<th>Safari</th>
-				<th><abbr title="Firefox">Fx</abbr></th>
-				<th>Lynx <sup id="fnref:1"><a href="#fn:1">1</a></sup></th>
-				<th>Impression</th>
-				<th>Mobile</th>
-				<th>Tablette</th>
+				<th>PageSpeed Score</th>
+				<th>Total Request Bytes</th>
+				<th>Number Resources</th>
+				<th>Number Static Resources</th>
+				<th>DOM ReadyStateLoading</th>
+				<th>DOM ReadyState Interactive</th>
+				<th>WindowOnLoad</th>
+				<th>Elapsed Load Time</th>
+				<th>Total Resources Time</th>
+				<th>Total Resources Size</th>
+				<th>Slowest Resource</th>
+				<th>Largest Resource</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -33,18 +33,22 @@ layout: doc
 				{{#isnt data.layout "doc"}}
 				<tr>
 					<td><a href="{{ relative ../../page.dest dest }}">{{ data.title }}</a></td>
-					<td><span class="label label-outline label-green">{{ data.valid }}</span></td>
-					<td><span class="label label-outline">{{ data.ie8 }}</span></td>
-					<td><span class="label label-outline">{{ data.ie9 }}</span></td>
-					<td><span class="label label-outline">{{ data.ie10 }}</span></td>
-					<td><span class="label label-outline">{{ data.opera }}</span></td>
-					<td><span class="label label-outline">{{ data.chrome }}</span></td>
-					<td><span class="label label-outline">{{ data.safari }}</span></td>
-					<td><span class="label label-outline">{{ data.firefox }}</span></td>
-					<td><span class="label label-outline">{{ data.lynx }}</span></td>
-					<td><span class="label label-outline">{{ data.print }}</span></td>
-					<td><span class="label label-outline">{{ data.mobile }}</span></td>
-					<td><span class="label label-outline">{{ data.tablet }}</span></td>
+					{{#at ../../desktop.results index}}
+					<td {{#lt score 80}}class="color-red"{{/lt}}>{{ score }}</td>
+					<td>{{ pageStats.totalRequestBytes }}</td>
+					<td>{{ pageStats.numberResources }}</td>
+					<td>{{ pageStats.numberStaticResources }}</td>
+					{{/at}}
+					{{#at ../.. basename}}
+					<td>{{ domReadystateLoading }}</td>
+					<td>{{ domReadystateInteractive }}</td>
+					<td>{{windowOnload}}</td>
+					<td>{{elapsedLoadTime}}</td>
+					<td>{{totalResourcesTime}}</td>
+					<td>{{totalResourcesSize}}</td>
+					<td><a href="{{slowestResource}}">view it</a></td>
+					<td><a href="{{largestResource}}">view it</a></td>
+					{{/at}}
 				</tr>
 				{{/isnt}}
 			{{/each}}

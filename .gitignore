@@ -10,5 +10,7 @@ bower_components
 build
 build-*
 .reports
+reports
+**/_data/json
 
 !.gitkeep

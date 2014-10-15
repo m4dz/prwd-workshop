@@ -22,6 +22,8 @@ module.exports = (grunt) ->
     grunt.file.expand(opts, '*.hbs').map (name) ->
       "/#{name.replace('hbs', 'html')}"
 
+  baseurl = 'http://m4dz.github.io/prwd-workshop/pages'
+
 
   # TASKS
   # ============================================================================
@@ -61,13 +63,18 @@ module.exports = (grunt) ->
         cwd    : 'src/'
         src    : ['js/**']
         dest   : 'build/'
+      loadreport:
+        expand: true
+        cwd: 'reports/'
+        src: ['*.json']
+        dest: 'src/tpl/_data/json/'
 
     # Assembling
     # ----------
     assemble:
       options:
         assets    : 'build/'
-        data      : ['src/tpl/_data/**/*.{json,yml}','package.json'],
+        data      : ['src/tpl/_data/**/**/*.{json,yml}','package.json'],
         helpers   : ['src/tpl/_helpers/**/*.js','node_modules/prettify/prettify.js']
         partials  : ['src/tpl/_includes/**/*.{md,html,hbs}','src/tpl/pages/**/*-ajax-*.{md,html,hbs}','src/tpl/pages/**/pop-*.{md,html,hbs}']
         layoutdir : 'src/tpl/_layouts'
@@ -203,22 +210,23 @@ module.exports = (grunt) ->
         options:
           reporters: [ 'json', 'console']
           key: process.env.GAPI_TOKEN
-          url: 'http://m4dz.github.io/prwd-workshop/pages'
+          url: baseurl
           paths: pageslist
           locale: 'en_US'
           strategy: 'desktop'
           threshold: 80
           dest: 'build/reports'
-      mobile:
-        options:
-          reporters: [ 'json', 'console']
-          key: process.env.GAPI_TOKEN
-          url: 'http://m4dz.github.io/prwd-workshop/pages'
-          paths: pageslist
-          locale: 'en_US'
-          strategy: 'mobile'
-          threshold: 80
-          dest: 'build/reports'
+
+    exec:
+      loadreport:
+        cmd: ->
+          binPath = require('phantomjs').path
+          loadreportPath = require('loadreport').load_reports
+
+          pageslist.map( (page) ->
+            "#{binPath} #{loadreportPath} #{baseurl}#{page} performance json; mv reports/loadreport.json reports/#{page.replace('html','json')};"
+          ).join ''
+
 
     # Livereload
     # ----------
@@ -252,12 +260,19 @@ module.exports = (grunt) ->
   require('matchdep').filterDev('grunt-*').forEach grunt.loadNpmTasks
   grunt.loadNpmTasks 'assemble'
 
+  grunt.registerTask 'loadreport', ['exec:loadreport','copy:loadreport']
+
   grunt.registerTask 'travis-deploy', ->
     this.requires ['build']
     if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true' and process.env.TRAVIS_PULL_REQUEST is 'false'
       grunt.log.writeln 'deploy'
+
       grunt.task.run 'gh-pages:deploy'
+
       grunt.task.run 'pagespeed_report'
+      grunt.task.run 'loadreport'
+
+      grunt.task.run 'html'
       grunt.task.run 'gh-pages:deploy'
 
     else
