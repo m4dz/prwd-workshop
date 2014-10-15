@@ -79,14 +79,20 @@ module.exports = (grunt) ->
         partials  : ['src/tpl/_includes/**/*.{md,html,hbs}','src/tpl/pages/**/*-ajax-*.{md,html,hbs}','src/tpl/pages/**/pop-*.{md,html,hbs}']
         layoutdir : 'src/tpl/_layouts'
         layoutext : '.hbs'
-
         # Prettify helpers configuration
         prettify:
           indent   : 2
           condense : true
           newlines : true
-
       pages:
+        files: [{
+          expand : true
+          cwd    : 'src/tpl/'
+          src    : ['pages/**/*.{md,html,hbs}']
+          dest   : 'build/'
+          ext    : '.html'
+        }]
+      index:
         files: [{
           expand : true
           cwd    : 'src/tpl/'
@@ -272,7 +278,7 @@ module.exports = (grunt) ->
       grunt.task.run 'pagespeed_report'
       grunt.task.run 'loadreport'
 
-      grunt.task.run 'html'
+      grunt.task.run 'assemble:index'
       grunt.task.run 'gh-pages:deploy'
 
     else
