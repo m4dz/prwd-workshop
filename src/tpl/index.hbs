@@ -6,7 +6,7 @@ layout: doc
 <div id="page">
 	<header>
 		<h1>{{ page.title }}</h1>
-		<p class="lead"><a href="./doc/">Voir la documentation</a></p>
+		<p class="lead"><a href="https://github.com/m4dz/prwd-workshop/blob/master/README.md">Voir la documentation</a></p>
 	</header>
 
 	<table class="table-stripped">
@@ -33,12 +33,12 @@ layout: doc
 				{{#isnt data.layout "doc"}}
 				<tr>
 					<td><a href="{{ relative ../../page.dest dest }}">{{ data.title }}</a></td>
-					{{#at ../../desktop.results index}}
+					{{#each ../../desktop.results}}{{#contains id ../basename}}
 					<td {{#lt score 80}}class="color-red"{{/lt}}>{{ score }}</td>
 					<td>{{ pageStats.totalRequestBytes }}</td>
 					<td>{{ pageStats.numberResources }}</td>
 					<td>{{ pageStats.numberStaticResources }}</td>
-					{{/at}}
+					{{/contains}}{{/each}}
 					{{#at ../.. basename}}
 					<td>{{ domReadystateLoading }}</td>
 					<td>{{ domReadystateInteractive }}</td>
@@ -56,6 +56,6 @@ layout: doc
 	</table>
 
 	<footer>
-		<p class="footnotes"><small>[1]: Hors erreurs de validation liées aux recommandations SEO.</small></p>
+		<p class="footnotes"><small>Paris Web 2014 | Ateliers | Performance &amp; Responsive Web Design</small></p>
 	</footer>
 </div>
