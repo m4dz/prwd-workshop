@@ -221,7 +221,7 @@ module.exports = (grunt) ->
           locale: 'en_US'
           strategy: 'desktop'
           threshold: 80
-          dest: 'build/reports'
+          dest: 'src/tpl/_data'
 
     exec:
       loadreport:
