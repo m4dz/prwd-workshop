@@ -109,6 +109,8 @@ Pour développer votre proposition d'amélioration, nous vous conseillons de par
          `- origin.hbs
 ```
 
+Pensez à modifier la clé `title` dans le _YAML Front Matter_ de votre nouvelle page pour que celle-ci soit convenablement identifiée dans la page d'index récapitulant les pages et leurs scores aux tests.
+
 De cette façon, nous obtiendrons dans la build finale un ensemble de pages, chacune correspondant à une évolution de version, et disposant de ses propres assets, ce qui nous permettra de réaliser des mesures comparées.
 
 
