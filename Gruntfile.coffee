@@ -214,7 +214,7 @@ module.exports = (grunt) ->
     pagespeed_report:
       desktop:
         options:
-          reporters: [ 'json', 'console']
+          reporters: [ 'json' ]
           key: process.env.GAPI_TOKEN
           url: baseurl
           paths: pageslist
