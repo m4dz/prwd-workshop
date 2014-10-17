@@ -1,21 +1,21 @@
 {
-	"date": 1413553527083,
+	"date": 1413579964466,
 	"task": "desktop",
 	"results": [
 		{
 			"kind": "pagespeedonline#result",
 			"id": "http://m4dz.github.io/prwd-workshop/7/index.html",
 			"responseCode": 200,
-			"title": "HTML5 UP - Prologue - Original",
+			"title": "No more JS dependency to load CSS and apply breakpoints",
 			"score": 86,
 			"pageStats": {
 				"numberResources": 17,
 				"numberHosts": 1,
 				"totalRequestBytes": "1198",
 				"numberStaticResources": 15,
-				"htmlResponseBytes": "9356",
+				"htmlResponseBytes": "9382",
 				"imageResponseBytes": "127568",
-				"javascriptResponseBytes": "142660",
+				"javascriptResponseBytes": "142661",
 				"otherResponseBytes": "9487",
 				"numberJsResources": 7
 			},
@@ -720,7 +720,7 @@
 				"major": 1,
 				"minor": 15
 			},
-			"uuid": "da710c90-5603-11e4-a498-4538d7073d30",
+			"uuid": "686e7590-5641-11e4-b52e-5f78a0e8dfc2",
 			"threshold": {
 				"success": 80,
 				"warning": 60,
