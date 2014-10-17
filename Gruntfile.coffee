@@ -108,8 +108,8 @@ module.exports = (grunt) ->
       pages:
         files: [{
           expand : true
-          cwd    : 'src/tpl/'
-          src    : ['pages/**/*.{md,html,hbs}']
+          cwd    : 'src/tpl/pages/'
+          src    : ['**/*.{md,html,hbs}']
           dest   : getBuildPath()
           ext    : '.html'
         }]
