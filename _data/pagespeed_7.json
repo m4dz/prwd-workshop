@@ -1,5 +1,5 @@
 {
-	"date": 1413581287344,
+	"date": 1413582392366,
 	"task": "desktop",
 	"results": [
 		{
@@ -7,17 +7,17 @@
 			"id": "http://m4dz.github.io/prwd-workshop/7/index.html",
 			"responseCode": 200,
 			"title": "No more JS dependency to load CSS and apply breakpoints",
-			"score": 82,
+			"score": 81,
 			"pageStats": {
-				"numberResources": 26,
+				"numberResources": 24,
 				"numberHosts": 3,
-				"totalRequestBytes": "2011",
-				"numberStaticResources": 19,
+				"totalRequestBytes": "1839",
+				"numberStaticResources": 20,
 				"htmlResponseBytes": "9381",
-				"cssResponseBytes": "166040",
+				"cssResponseBytes": "166024",
 				"imageResponseBytes": "291592",
 				"javascriptResponseBytes": "142658",
-				"otherResponseBytes": "82060",
+				"otherResponseBytes": "53600",
 				"numberJsResources": 7,
 				"numberCssResources": 2
 			},
@@ -60,7 +60,7 @@
 					},
 					"LeverageBrowserCaching": {
 						"localizedRuleName": "Leverage browser caching",
-						"ruleImpact": 8.991071428571429,
+						"ruleImpact": 9.490575396825397,
 						"urlBlocks": [
 							{
 								"header": {
@@ -100,6 +100,21 @@
 												{
 													"type": "URL",
 													"value": "http://m4dz.github.io/prwd-workshop/7/css/styles.css"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/7/fonts/fontawesome-webfont.woff?v=4.2.0"
 												},
 												{
 													"type": "DURATION",
@@ -850,7 +865,7 @@
 				"major": 1,
 				"minor": 15
 			},
-			"uuid": "7d4c8850-5644-11e4-ae40-57e363f0ed5a",
+			"uuid": "0f9d95d0-5647-11e4-8218-dd0d95685dea",
 			"threshold": {
 				"success": 80,
 				"warning": 60,
