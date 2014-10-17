@@ -1,5 +1,5 @@
 {
-	"date": 1413589507218,
+	"date": 1413590287578,
 	"task": "desktop",
 	"results": [
 		{
@@ -13,11 +13,11 @@
 				"numberHosts": 3,
 				"totalRequestBytes": "2401",
 				"numberStaticResources": 24,
-				"htmlResponseBytes": "10145",
-				"cssResponseBytes": "43343",
-				"imageResponseBytes": "23420313",
-				"javascriptResponseBytes": "142836",
-				"otherResponseBytes": "53598",
+				"htmlResponseBytes": "10114",
+				"cssResponseBytes": "43335",
+				"imageResponseBytes": "23420291",
+				"javascriptResponseBytes": "142826",
+				"otherResponseBytes": "53600",
 				"numberJsResources": 7,
 				"numberCssResources": 6
 			},
@@ -726,7 +726,7 @@
 					},
 					"OptimizeImages": {
 						"localizedRuleName": "Optimize images",
-						"ruleImpact": 1158.1678000000002,
+						"ruleImpact": 1541.9238,
 						"urlBlocks": [
 							{
 								"header": {
@@ -743,7 +743,7 @@
 										},
 										{
 											"type": "BYTES",
-											"value": "11MiB"
+											"value": "14.7MiB"
 										},
 										{
 											"type": "PERCENTAGE",
@@ -763,6 +763,25 @@
 												{
 													"type": "BYTES",
 													"value": "3.5MiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/unsplash_jasper_van_der_meij.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "2.7MiB"
 												},
 												{
 													"type": "PERCENTAGE",
@@ -839,6 +858,25 @@
 												{
 													"type": "BYTES",
 													"value": "1,018.2KiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/unsplash_charles_s.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "962KiB"
 												},
 												{
 													"type": "PERCENTAGE",
@@ -934,7 +972,7 @@
 				"major": 1,
 				"minor": 15
 			},
-			"uuid": "a2f7cd90-5657-11e4-88bb-b78631478fc4",
+			"uuid": "75e83db0-5659-11e4-85ba-9997b7f34bc3",
 			"threshold": {
 				"success": 80,
 				"warning": 60,
