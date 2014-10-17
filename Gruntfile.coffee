@@ -29,7 +29,7 @@ module.exports = (grunt) ->
       cwd: 'build/'
 
     pr = grunt.file.expand(opts, '*').filter( (dir) -> return !isNaN(+dir) )
-    pr.unshift 'master'
+    pr.unshift 'origin', 'master'
 
     content =
       branches: pr
