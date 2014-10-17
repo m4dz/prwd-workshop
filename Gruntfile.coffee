@@ -24,6 +24,13 @@ module.exports = (grunt) ->
     path.push getBuildPrefix() if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true'
     path.join('/') + '/'
 
+  registerTracks = ->
+    opts =
+      cwd: 'build/'
+    content =
+      branches: grunt.file.expand(opts, ['*','!_data','!css'])
+    grunt.file.write('src/tpl/_data/tracks.json', JSON.stringify(content))
+
   pageurl = "http://m4dz.github.io/prwd-workshop/#{getBuildPrefix()}/pages/index.html"
 
 
@@ -65,17 +72,22 @@ module.exports = (grunt) ->
         cwd    : 'src/'
         src    : ['js/**']
         dest   : getBuildPath()
+      data:
+        expand : true
+        cwd    : 'build/_data/'
+        src    : ['*.json']
+        dest   : 'src/tpl/_data/'
 
     rename:
       pagespeed:
         files:[
           src: ['reports/json/desktop.json']
-          dest: "src/tpl/_data/pagespeed_#{getBuildPrefix()}.json"
+          dest: "build/_data/pagespeed_#{getBuildPrefix()}.json"
         ]
       loadreport:
         files:[
           src: ['reports/loadreport.json']
-          dest: "src/tpl/_data/loadreport_#{getBuildPrefix()}.json"
+          dest: "build/_data/loadreport_#{getBuildPrefix()}.json"
         ]
 
     # Assembling
@@ -105,7 +117,7 @@ module.exports = (grunt) ->
         files: [{
           expand : true
           cwd    : 'src/tpl/'
-          src    : ['index.hbs','pages/**/*.{md,html,hbs}']
+          src    : ['index.hbs']
           dest   : getBuildPath()
           ext    : '.html'
         }]
@@ -239,6 +251,8 @@ module.exports = (grunt) ->
           loadreportPath = require('loadreport').load_reports
           "#{binPath} #{loadreportPath} #{pageurl} performance json"
 
+      loadcache: 'git read-tree --prefix=build/ -u origin/gh-pages'
+
 
     # Livereload
     # ----------
@@ -284,18 +298,21 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'live', ['connect:basic','watch']
   grunt.registerTask 'build', ['clean:all','js','css','html']
-  grunt.registerTask 'snapshot', ['build', 'compress:build']
+  grunt.registerTask 'snapshot', ['build','compress:build']
 
   grunt.registerTask 'travis-deploy', ->
+    this.requires ['exec:loadcache']
     this.requires ['build']
     if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true'
       grunt.log.writeln 'deploy'
       grunt.task.run 'gh-pages:deploy'
       grunt.task.run 'pagespeed'
       grunt.task.run 'loadreport'
+      grunt.task.run 'copy:data'
+      registerTracks()
       # grunt.task.run 'assemble:index'
       grunt.task.run 'gh-pages:deploy'
     else
       grunt.log.writeln 'skip deploy'
 
-  grunt.registerTask 'deploy', ['build', 'travis-deploy']
+  grunt.registerTask 'deploy', ['exec:loadcache','build','travis-deploy']
