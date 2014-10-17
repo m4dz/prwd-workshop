@@ -1,5 +1,5 @@
 {
-	"date": 1413579964466,
+	"date": 1413580903279,
 	"task": "desktop",
 	"results": [
 		{
@@ -13,9 +13,9 @@
 				"numberHosts": 1,
 				"totalRequestBytes": "1198",
 				"numberStaticResources": 15,
-				"htmlResponseBytes": "9382",
-				"imageResponseBytes": "127568",
-				"javascriptResponseBytes": "142661",
+				"htmlResponseBytes": "9381",
+				"imageResponseBytes": "127573",
+				"javascriptResponseBytes": "142659",
 				"otherResponseBytes": "9487",
 				"numberJsResources": 7
 			},
@@ -720,7 +720,7 @@
 				"major": 1,
 				"minor": 15
 			},
-			"uuid": "686e7590-5641-11e4-b52e-5f78a0e8dfc2",
+			"uuid": "97efa4e0-5643-11e4-9e7b-df628dc216cc",
 			"threshold": {
 				"success": 80,
 				"warning": 60,
