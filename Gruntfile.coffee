@@ -118,7 +118,7 @@ module.exports = (grunt) ->
           expand : true
           cwd    : 'src/tpl/'
           src    : ['index.hbs']
-          dest   : getBuildPath()
+          dest   : 'build/'
           ext    : '.html'
         }]
 
