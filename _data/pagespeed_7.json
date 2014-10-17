@@ -1,5 +1,5 @@
 {
-	"date": 1413582392366,
+	"date": 1413583588214,
 	"task": "desktop",
 	"results": [
 		{
@@ -7,17 +7,17 @@
 			"id": "http://m4dz.github.io/prwd-workshop/7/index.html",
 			"responseCode": 200,
 			"title": "No more JS dependency to load CSS and apply breakpoints",
-			"score": 81,
+			"score": 82,
 			"pageStats": {
-				"numberResources": 24,
+				"numberResources": 26,
 				"numberHosts": 3,
-				"totalRequestBytes": "1839",
-				"numberStaticResources": 20,
+				"totalRequestBytes": "2011",
+				"numberStaticResources": 19,
 				"htmlResponseBytes": "9381",
-				"cssResponseBytes": "166024",
-				"imageResponseBytes": "291592",
-				"javascriptResponseBytes": "142658",
-				"otherResponseBytes": "53600",
+				"cssResponseBytes": "166039",
+				"imageResponseBytes": "291588",
+				"javascriptResponseBytes": "142656",
+				"otherResponseBytes": "82061",
 				"numberJsResources": 7,
 				"numberCssResources": 2
 			},
@@ -60,7 +60,7 @@
 					},
 					"LeverageBrowserCaching": {
 						"localizedRuleName": "Leverage browser caching",
-						"ruleImpact": 9.490575396825397,
+						"ruleImpact": 8.991071428571429,
 						"urlBlocks": [
 							{
 								"header": {
@@ -100,21 +100,6 @@
 												{
 													"type": "URL",
 													"value": "http://m4dz.github.io/prwd-workshop/7/css/styles.css"
-												},
-												{
-													"type": "DURATION",
-													"value": "10 minutes"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "$1 ($2)",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/fonts/fontawesome-webfont.woff?v=4.2.0"
 												},
 												{
 													"type": "DURATION",
@@ -865,7 +850,7 @@
 				"major": 1,
 				"minor": 15
 			},
-			"uuid": "0f9d95d0-5647-11e4-8218-dd0d95685dea",
+			"uuid": "d864e610-5649-11e4-8a3f-11120b2d8a0b",
 			"threshold": {
 				"success": 80,
 				"warning": 60,
