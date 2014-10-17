@@ -251,7 +251,11 @@ module.exports = (grunt) ->
           loadreportPath = require('loadreport').load_reports
           "#{binPath} #{loadreportPath} #{pageurl} performance json"
 
-      loadcache: 'git read-tree --prefix=build/ -u origin/gh-pages'
+      loadcache:
+        cmd: ->
+          cmd  = 'git remote add gh git://github.com/m4dz/prwd-workshop.git;'
+          cmd += 'git fetch;'
+          cmd += 'git read-tree --prefix=build/ -u gh/gh-pages;'
 
 
     # Livereload
