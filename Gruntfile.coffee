@@ -130,12 +130,17 @@ module.exports = (grunt) ->
         force      : true
         bundleExec : true
       compile:
+        cssDir: "#{getBuildPath()}/css"
         clean : true
         trace : false
       watch:
+        cssDir: "#{getBuildPath()}/css"
         clean : false
         trace : true
         watch : true
+      doc:
+        clean : true
+        trace : false
 
     # RequireJS
     # ---------
