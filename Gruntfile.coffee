@@ -68,19 +68,21 @@ module.exports = (grunt) ->
 
     rename:
       pagespeed:
-        files:
-          src: 'reports/json/desktop.json'
-          dest: "src/tpl/_data/#{getBuildPrefix()}/pagespeed_#{getBuildPrefix()}.json"
+        files:[
+          src: ['reports/json/desktop.json']
+          dest: "src/tpl/_data/pagespeed_#{getBuildPrefix()}.json"
+        ]
       loadreport:
-        files:
-          src: 'reports/loadreport.json'
-          dest: "src/tpl/_data/#{getBuildPrefix()}/loadreport_#{getBuildPrefix()}.json"
+        files:[
+          src: ['reports/loadreport.json']
+          dest: "src/tpl/_data/loadreport_#{getBuildPrefix()}.json"
+        ]
 
     # Assembling
     # ----------
     assemble:
       options:
-        assets    : 'build/'
+        assets    : "#{getBuildPath()}"
         data      : ['src/tpl/_data/**/**/*.{json,yml}','package.json'],
         helpers   : ['src/tpl/_helpers/**/*.js','node_modules/prettify/prettify.js']
         partials  : ['src/tpl/_includes/**/*.{md,html,hbs}','src/tpl/pages/**/*-ajax-*.{md,html,hbs}','src/tpl/pages/**/pop-*.{md,html,hbs}']
