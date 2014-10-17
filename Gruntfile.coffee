@@ -254,7 +254,7 @@ module.exports = (grunt) ->
       loadcache:
         cmd: ->
           cmd  = 'git remote add gh git://github.com/m4dz/prwd-workshop.git;'
-          cmd += 'git fetch;'
+          cmd += 'git fetch gh;'
           cmd += 'git read-tree --prefix=build/ -u gh/gh-pages;'
 
 
