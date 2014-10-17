@@ -319,7 +319,8 @@ module.exports = (grunt) ->
       grunt.task.run 'loadreport'
       grunt.task.run 'copy:data'
       registerTracks()
-      # grunt.task.run 'assemble:index'
+      grunt.task.run 'assemble:index'
+      grunt.task.run 'compass:doc'
       grunt.task.run 'gh-pages:deploy'
     else
       grunt.log.writeln 'skip deploy'

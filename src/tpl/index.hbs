@@ -29,28 +29,34 @@ layout: doc
 			</tr>
 		</thead>
 		<tbody>
-			{{#each pages}}
-				{{#isnt data.layout "doc"}}
-				<tr>
-					<td><a href="{{ relative ../../page.dest dest }}">{{ data.title }}</a></td>
-					{{#each ../../desktop.results}}{{#contains id ../basename}}
-					<td {{#lt score 80}}class="color-red"{{/lt}}>{{ score }}</td>
-					<td>{{ pageStats.totalRequestBytes }}</td>
-					<td>{{ pageStats.numberResources }}</td>
-					<td>{{ pageStats.numberStaticResources }}</td>
-					{{/contains}}{{/each}}
-					{{#at ../.. basename}}
-					<td>{{ domReadystateLoading }}</td>
-					<td>{{ domReadystateInteractive }}</td>
-					<td>{{windowOnload}}</td>
-					<td>{{elapsedLoadTime}}</td>
-					<td>{{totalResourcesTime}}</td>
-					<td>{{totalResourcesSize}}</td>
-					<td><a href="{{slowestResource}}">view it</a></td>
-					<td><a href="{{largestResource}}">view it</a></td>
-					{{/at}}
-				</tr>
-				{{/isnt}}
+			{{#each tracks.branches}}
+			<tr>
+				{{#at .. 'pagespeed' this}}
+				<td>
+					<a href="{{ results.0.id }}">{{ results.0.title }}</a>
+					<small>(<a href="
+						{{#is .. 'master'}}https://github.com/m4dz/prwd-workshop/tree/master
+						{{else}}{{#is ../.. 'origin'}}https://github.com/m4dz/prwd-workshop/tree/origin
+						{{else}}https://github.com/m4dz/prwd-workshop/pull/{{../../..}}
+						{{/is}}{{/is}}">view on github</a>)
+					</small>
+				</td>
+				<td {{#lt results.0.score 80}}class="color-red"{{/lt}}>{{ results.0.score }}</td>
+				<td>{{ results.0.pageStats.totalRequestBytes }}</td>
+				<td>{{ results.0.pageStats.numberResources }}</td>
+				<td>{{ results.0.pageStats.numberStaticResources }}</td>
+				{{/at}}
+				{{#at .. 'loadreport' this}}
+				<td>{{ domReadystateLoading }}</td>
+				<td>{{ domReadystateInteractive }}</td>
+				<td>{{windowOnload}}</td>
+				<td>{{elapsedLoadTime}}</td>
+				<td>{{totalResourcesTime}}</td>
+				<td>{{totalResourcesSize}}</td>
+				<td><a href="{{slowestResource}}">view it</a></td>
+				<td><a href="{{largestResource}}">view it</a></td>
+				{{/at}}
+			</tr>
 			{{/each}}
 		</tbody>
 	</table>
