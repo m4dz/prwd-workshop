@@ -1,9 +1,5 @@
 module.exports = (grunt) ->
 
-  # Top VARS
-  # ============================================================================
-  buildPath = 'build/'
-
   # HELPERS
   # ============================================================================
   getDeployMessage = ->
@@ -19,6 +15,12 @@ module.exports = (grunt) ->
            Build id: #{ process.env.TRAVIS_BUILD_ID }
            Build number: #{ process.env.TRAVIS_BUILD_NUMBER }
            """
+
+  getBuildPath = ->
+    path = 'build/'
+    if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true'
+      path += "#{process.env.TRAVIS_BRANCH}/"
+    return path
 
   pageslist = do ->
     opts =
@@ -38,11 +40,11 @@ module.exports = (grunt) ->
     # --------
     clean:
       tpl    : ["src/js/templates/**/*.js"]
-      js     : ["#{buildPath}js/"]
-      css    : ["#{buildPath}css/"]
-      html   : ["#{buildPath}*.html"]
-      assets : ["#{buildPath}fonts/","#{buildPath}img/","#{buildPath}*.{ico,png}"]
-      all    : ["#{buildPath}","src/templates/**/*.js"]
+      js     : ["#{getBuildPath()}js/"]
+      css    : ["#{getBuildPath()}css/"]
+      html   : ["#{getBuildPath()}*.html"]
+      assets : ["#{getBuildPath()}fonts/","#{getBuildPath()}img/","#{getBuildPath()}*.{ico,png}"]
+      all    : ["#{getBuildPath()}","src/templates/**/*.js"]
 
     # Copying
     # -------
@@ -51,22 +53,22 @@ module.exports = (grunt) ->
         expand : true
         cwd    : 'src/'
         src    : ['files/**', 'fonts/**','images/**','*.{png,ico}']
-        dest   : buildPath
+        dest   : getBuildPath()
       libs:
         expand : true
         cwd    : 'src/'
         src    : ['js/lib/**']
-        dest   : buildPath
+        dest   : getBuildPath()
       themecss:
         expand : true
         cwd    : 'src/'
         src    : ['css/**']
-        dest   : buildPath
+        dest   : getBuildPath()
       themejs:
         expand : true
         cwd    : 'src/'
         src    : ['js/**']
-        dest   : buildPath
+        dest   : getBuildPath()
       loadreport:
         expand: true
         cwd: 'reports/'
@@ -93,7 +95,7 @@ module.exports = (grunt) ->
           expand : true
           cwd    : 'src/tpl/'
           src    : ['pages/**/*.{md,html,hbs}']
-          dest   : buildPath
+          dest   : getBuildPath()
           ext    : '.html'
         }]
       index:
@@ -101,7 +103,7 @@ module.exports = (grunt) ->
           expand : true
           cwd    : 'src/tpl/'
           src    : ['index.hbs','pages/**/*.{md,html,hbs}']
-          dest   : buildPath
+          dest   : getBuildPath()
           ext    : '.html'
         }]
 
@@ -165,7 +167,7 @@ module.exports = (grunt) ->
     modernizr:
       dist:
         devFile    : 'remote'
-        outputFile : "#{buildPath}/js/lib/modernizr.js"
+        outputFile : "#{getBuildPath()}/js/lib/modernizr.js"
         parseFiles : true
         extra:
           shiv       : true
@@ -189,7 +191,7 @@ module.exports = (grunt) ->
           mode: "tgz"
         files: [{
           expand: true
-          cwd: buildPath
+          cwd: getBuildPath()
           src: ['**', '!files/*.{m4v,ogv,webm}']
           dest: './'
         }]
@@ -280,15 +282,8 @@ module.exports = (grunt) ->
   grunt.registerTask 'loadreport', ['exec:loadreport','copy:loadreport']
 
   grunt.registerTask 'live', ['connect:basic','watch']
+  grunt.registerTask 'build', ['clean:all','js','css','html']
   grunt.registerTask 'snapshot', ['build', 'compress:build']
-
-  grunt.registerTask 'build', ->
-    if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true'
-      buildPath += "#{process.env.TRAVIS_BRANCH}/"
-    grunt.task.run 'clean:all'
-    grunt.task.run 'js'
-    grunt.task.run 'css'
-    grunt.task.run 'html'
 
   grunt.registerTask 'travis-deploy', ->
     this.requires ['build']
