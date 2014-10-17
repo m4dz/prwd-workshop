@@ -1,25 +1,23 @@
 {
-	"date": 1413550006733,
+	"date": 1413550132117,
 	"task": "desktop",
 	"results": [
 		{
 			"kind": "pagespeedonline#result",
-			"id": "http://m4dz.github.io/prwd-workshop/master/pages/index.html",
+			"id": "http://m4dz.github.io/prwd-workshop/master/index.html",
 			"responseCode": 200,
 			"title": "HTML5 UP - Prologue - Original",
-			"score": 76,
+			"score": 84,
 			"pageStats": {
-				"numberResources": 28,
-				"numberHosts": 3,
-				"totalRequestBytes": "2254",
-				"numberStaticResources": 24,
-				"htmlResponseBytes": "9537",
-				"cssResponseBytes": "43322",
-				"imageResponseBytes": "291588",
+				"numberResources": 20,
+				"numberHosts": 1,
+				"totalRequestBytes": "1483",
+				"numberStaticResources": 15,
+				"htmlResponseBytes": "9517",
+				"imageResponseBytes": "127566",
 				"javascriptResponseBytes": "142848",
-				"otherResponseBytes": "53599",
-				"numberJsResources": 7,
-				"numberCssResources": 6
+				"otherResponseBytes": "37948",
+				"numberJsResources": 7
 			},
 			"formattedResults": {
 				"locale": "en_US",
@@ -60,7 +58,7 @@
 					},
 					"LeverageBrowserCaching": {
 						"localizedRuleName": "Leverage browser caching",
-						"ruleImpact": 11.48859126984127,
+						"ruleImpact": 7.492559523809525,
 						"urlBlocks": [
 							{
 								"header": {
@@ -84,127 +82,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/font-awesome.min.css"
-												},
-												{
-													"type": "DURATION",
-													"value": "10 minutes"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "$1 ($2)",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/images/overlay.png"
-												},
-												{
-													"type": "DURATION",
-													"value": "10 minutes"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "$1 ($2)",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-narrow.css"
-												},
-												{
-													"type": "DURATION",
-													"value": "10 minutes"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "$1 ($2)",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-normal.css"
-												},
-												{
-													"type": "DURATION",
-													"value": "10 minutes"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "$1 ($2)",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-wide.css"
-												},
-												{
-													"type": "DURATION",
-													"value": "10 minutes"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "$1 ($2)",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/style.css"
-												},
-												{
-													"type": "DURATION",
-													"value": "10 minutes"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "$1 ($2)",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/fonts/fontawesome-webfont.woff?v=4.2.0"
-												},
-												{
-													"type": "DURATION",
-													"value": "10 minutes"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "$1 ($2)",
-											"args": [
-												{
-													"type": "URL",
 													"value": "http://m4dz.github.io/prwd-workshop/master/images/avatar.jpg"
-												},
-												{
-													"type": "DURATION",
-													"value": "10 minutes"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "$1 ($2)",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/images/banner.jpg"
 												},
 												{
 													"type": "DURATION",
@@ -446,52 +324,18 @@
 					},
 					"MinifyCss": {
 						"localizedRuleName": "Minify CSS",
-						"ruleImpact": 0.1305,
+						"ruleImpact": 0,
 						"urlBlocks": [
 							{
 								"header": {
-									"format": "Compacting CSS code can save many bytes of data and speed up download and parse times."
-								}
-							},
-							{
-								"header": {
-									"format": "Minify CSS for the following resources to reduce their size by $2 ($3 reduction).",
+									"format": "Your CSS is minified. Learn more about minifying CSS.",
 									"args": [
 										{
 											"type": "HYPERLINK",
 											"value": "https://developers.google.com/speed/docs/insights/MinifyResources"
-										},
-										{
-											"type": "BYTES",
-											"value": "616B"
-										},
-										{
-											"type": "PERCENTAGE",
-											"value": "21%"
 										}
 									]
-								},
-								"urls": [
-									{
-										"result": {
-											"format": "Minifying $1 could save $2 ($3 reduction) after compression.",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/style.css"
-												},
-												{
-													"type": "BYTES",
-													"value": "616B"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "21%"
-												}
-											]
-										}
-									}
-								]
+								}
 							}
 						]
 					},
@@ -531,7 +375,7 @@
 					},
 					"MinimizeRenderBlockingResources": {
 						"localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
-						"ruleImpact": 14,
+						"ruleImpact": 8,
 						"urlBlocks": [
 							{
 								"header": {
@@ -543,7 +387,7 @@
 										},
 										{
 											"type": "INT_LITERAL",
-											"value": "6"
+											"value": "4"
 										}
 									]
 								}
@@ -660,7 +504,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/style.css"
+													"value": "http://m4dz.github.io/prwd-workshop/css/style.css"
 												}
 											]
 										}
@@ -671,7 +515,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-wide.css"
+													"value": "http://m4dz.github.io/prwd-workshop/css/style-wide.css"
 												}
 											]
 										}
@@ -682,7 +526,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-normal.css"
+													"value": "http://m4dz.github.io/prwd-workshop/css/style-normal.css"
 												}
 											]
 										}
@@ -693,29 +537,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-narrow.css"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "$1",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/font-awesome.min.css"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "$1",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600"
+													"value": "http://m4dz.github.io/prwd-workshop/css/style-narrow.css"
 												}
 											]
 										}
@@ -726,7 +548,7 @@
 					},
 					"OptimizeImages": {
 						"localizedRuleName": "Optimize images",
-						"ruleImpact": 3.1326,
+						"ruleImpact": 0.7830999999999999,
 						"urlBlocks": [
 							{
 								"header": {
@@ -743,34 +565,15 @@
 										},
 										{
 											"type": "BYTES",
-											"value": "30.6KiB"
+											"value": "7.6KiB"
 										},
 										{
 											"type": "PERCENTAGE",
-											"value": "11%"
+											"value": "7%"
 										}
 									]
 								},
 								"urls": [
-									{
-										"result": {
-											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/css/images/overlay.png"
-												},
-												{
-													"type": "BYTES",
-													"value": "22KiB"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "41%"
-												}
-											]
-										}
-									},
 									{
 										"result": {
 											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
@@ -922,25 +725,6 @@
 												}
 											]
 										}
-									},
-									{
-										"result": {
-											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/master/images/banner.jpg"
-												},
-												{
-													"type": "BYTES",
-													"value": "972B"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "1%"
-												}
-											]
-										}
 									}
 								]
 							}
@@ -948,40 +732,18 @@
 					},
 					"PrioritizeVisibleContent": {
 						"localizedRuleName": "Prioritize visible content",
-						"ruleImpact": 2,
+						"ruleImpact": 0,
 						"urlBlocks": [
 							{
 								"header": {
-									"format": "Your page requires additional network round trips to render the above-the-fold content. For best performance, reduce the amount of HTML needed to render above-the-fold content."
-								}
-							},
-							{
-								"header": {
-									"format": "The entire HTML response was not sufficient to render the above-the-fold content. This usually indicates that additional resources, loaded after HTML parsing, were required to render above-the-fold content. Prioritize visible content that is needed for rendering above-the-fold by including it directly in the HTML response.",
+									"format": "You have the above-the-fold content properly prioritized. Learn more about prioritizing visible content.",
 									"args": [
 										{
 											"type": "HYPERLINK",
 											"value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
 										}
 									]
-								},
-								"urls": [
-									{
-										"result": {
-											"format": "Only about $1 of the final above-the-fold content could be rendered with the full HTML response $2.",
-											"args": [
-												{
-													"type": "PERCENTAGE",
-													"value": "1%"
-												},
-												{
-													"type": "SNAPSHOT_RECT",
-													"value": "snapshot:11"
-												}
-											]
-										}
-									}
-								]
+								}
 							}
 						]
 					}
@@ -991,13 +753,13 @@
 				"major": 1,
 				"minor": 15
 			},
-			"uuid": "a851e890-55fb-11e4-8898-3705c601e8c1",
+			"uuid": "f2de3a80-55fb-11e4-8582-d14d18cb76af",
 			"threshold": {
 				"success": 80,
 				"warning": 60,
-				"marker": "warning"
+				"marker": "success"
 			},
-			"thresholdMarker": "warning"
+			"thresholdMarker": "success"
 		}
 	]
 }
