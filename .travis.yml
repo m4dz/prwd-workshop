@@ -1,6 +1,12 @@
 language: node_js
 node_js:
 - '0.10'
+cache:
+  bundler: true
+  directories:
+  - build
+  - src/tpl/_data
+  - node_modules
 before_install:
 - bundle install
 - npm install -g grunt-cli
@@ -10,10 +16,6 @@ branches:
   only:
   - master
   - origin
-cache:
-  directories:
-  - build
-  - src/tpl/_data
 env:
   global:
   - secure: XtJYKxmdZSeAE4JUs8JXAq1xkF4vEDbnIbpcypA1sH+6uVEBVu23lk+NvU9MpomyFcL7xRCBpQZbEUQk0qeHJwRlk+IWuWWjJexI3HLIptyE//LqiGmNxbwe1ZE2cxjsY1hXRPABborKagdnjyXPM36B69cdKUF0SGVm3C1t/RI=
