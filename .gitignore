@@ -11,6 +11,6 @@ build
 build-*
 .reports
 reports
-**/_data/json
+**/_data/*.json
 
 !.gitkeep
