@@ -16,19 +16,15 @@ module.exports = (grunt) ->
            Build number: #{ process.env.TRAVIS_BUILD_NUMBER }
            """
 
+  getBuildPrefix = ->
+    if process.env.TRAVIS_PULL_REQUEST isnt 'false' then process.env.TRAVIS_PULL_REQUEST else process.env.TRAVIS_BRANCH
+
   getBuildPath = ->
-    path = 'build/'
-    if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true'
-      path += "#{if process.env.TRAVIS_PULL_REQUEST isnt 'false' then process.env.TRAVIS_PULL_REQUEST else process.env.TRAVIS_BRANCH}/"
-    return path
+    path = ['build']
+    path.push getBuildPrefix() if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true'
+    path.join('/') + '/'
 
-  pageslist = do ->
-    opts =
-      cwd: 'src/tpl/pages'
-    grunt.file.expand(opts, '*.hbs').map (name) ->
-      "/#{name.replace('hbs', 'html')}"
-
-  baseurl = 'http://m4dz.github.io/prwd-workshop/pages'
+  baseurl = "http://m4dz.github.io/prwd-workshop/#{getBuildPrefix()}/pages/index.html"
 
 
   # TASKS
@@ -69,11 +65,16 @@ module.exports = (grunt) ->
         cwd    : 'src/'
         src    : ['js/**']
         dest   : getBuildPath()
+
+    rename:
+      pagespeed:
+        files:
+          src: 'reports/json/desktop.json'
+          dest: "src/tpl/_data/#{getBuildPrefix()}/pagespeed_#{getBuildPrefix()}.json"
       loadreport:
-        expand: true
-        cwd: 'reports/'
-        src: ['*.json']
-        dest: 'src/tpl/_data/json/'
+        files:
+          src: 'reports/loadreport.json'
+          dest: "src/tpl/_data/#{getBuildPrefix()}/loadreport_#{getBuildPrefix()}.json"
 
     # Assembling
     # ----------
@@ -167,7 +168,7 @@ module.exports = (grunt) ->
     modernizr:
       dist:
         devFile    : 'remote'
-        outputFile : "#{getBuildPath()}/js/lib/modernizr.js"
+        outputFile : "#{getBuildPath()}js/lib/modernizr.js"
         parseFiles : true
         extra:
           shiv       : true
@@ -215,29 +216,26 @@ module.exports = (grunt) ->
           silent: true
         src: ['**/*']
 
+
     # Test / Perfs
     # ------------
     pagespeed_report:
       desktop:
         options:
-          reporters: [ 'json' ]
+          reporters: ['json']
           key: process.env.GAPI_TOKEN
-          url: baseurl
-          paths: pageslist
+          url: pageurl
           locale: 'en_US'
           strategy: 'desktop'
           threshold: 80
-          dest: 'src/tpl/_data'
+          dest: 'reports'
 
     exec:
       loadreport:
         cmd: ->
           binPath = require('phantomjs').path
           loadreportPath = require('loadreport').load_reports
-
-          pageslist.map( (page) ->
-            "#{binPath} #{loadreportPath} #{baseurl}#{page} performance json; mv reports/loadreport.json reports/#{page.replace('html','json')};"
-          ).join ''
+          "#{binPath} #{loadreportPath} #{pageurl} performance json"
 
 
     # Livereload
@@ -279,7 +277,8 @@ module.exports = (grunt) ->
   grunt.registerTask 'js', ['clean:js','clean:tpl','libs','jshint','copy:themejs']
   grunt.registerTask 'html', ['clean:html','assemble:pages']
 
-  grunt.registerTask 'loadreport', ['exec:loadreport','copy:loadreport']
+  grunt.registerTask 'pagespeed', ['pagespeed_report','rename:pagespeed']
+  grunt.registerTask 'loadreport', ['exec:loadreport','rename:loadreport']
 
   grunt.registerTask 'live', ['connect:basic','watch']
   grunt.registerTask 'build', ['clean:all','js','css','html']
@@ -290,7 +289,7 @@ module.exports = (grunt) ->
     if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true'
       grunt.log.writeln 'deploy'
       grunt.task.run 'gh-pages:deploy'
-      grunt.task.run 'pagespeed_report'
+      grunt.task.run 'pagespeed'
       grunt.task.run 'loadreport'
       grunt.task.run 'assemble:index'
       grunt.task.run 'gh-pages:deploy'
