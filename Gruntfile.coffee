@@ -16,13 +16,15 @@ module.exports = (grunt) ->
            Build number: #{ process.env.TRAVIS_BUILD_NUMBER }
            """
 
-  pageslist = do ->
-    opts =
-      cwd: 'src/tpl/pages'
-    grunt.file.expand(opts, '*.hbs').map (name) ->
-      "/#{name.replace('hbs', 'html')}"
+  getBuildPrefix = ->
+    if process.env.TRAVIS_PULL_REQUEST isnt 'false' then process.env.TRAVIS_PULL_REQUEST else process.env.TRAVIS_BRANCH
 
-  baseurl = 'http://m4dz.github.io/prwd-workshop/pages'
+  getBuildPath = ->
+    path = ['build']
+    path.push getBuildPrefix() if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true'
+    path.join('/') + '/'
+
+  pageurl = "http://m4dz.github.io/prwd-workshop/#{getBuildPrefix()}/pages/index.html"
 
 
   # TASKS
@@ -33,12 +35,12 @@ module.exports = (grunt) ->
     # Cleaning
     # --------
     clean:
-      tpl    : ['src/js/templates/**/*.js']
-      js     : ['build/js/']
-      css    : ['build/css/']
-      html   : ['build/*.html']
-      assets : ['build/fonts/','build/img/','build/*.{ico,png}']
-      all    : ['build/','src/templates/**/*.js']
+      tpl    : ["src/js/templates/**/*.js"]
+      js     : ["#{getBuildPath()}js/"]
+      css    : ["#{getBuildPath()}css/"]
+      html   : ["#{getBuildPath()}*.html"]
+      assets : ["#{getBuildPath()}fonts/","#{getBuildPath()}img/","#{getBuildPath()}*.{ico,png}"]
+      all    : ["#{getBuildPath()}","src/templates/**/*.js"]
 
     # Copying
     # -------
@@ -47,33 +49,40 @@ module.exports = (grunt) ->
         expand : true
         cwd    : 'src/'
         src    : ['files/**', 'fonts/**','images/**','*.{png,ico}']
-        dest   : 'build/'
+        dest   : getBuildPath()
       libs:
         expand : true
         cwd    : 'src/'
         src    : ['js/lib/**']
-        dest   : 'build/'
+        dest   : getBuildPath()
       themecss:
         expand : true
         cwd    : 'src/'
         src    : ['css/**']
-        dest   : 'build/'
+        dest   : getBuildPath()
       themejs:
         expand : true
         cwd    : 'src/'
         src    : ['js/**']
-        dest   : 'build/'
+        dest   : getBuildPath()
+
+    rename:
+      pagespeed:
+        files:[
+          src: ['reports/json/desktop.json']
+          dest: "src/tpl/_data/pagespeed_#{getBuildPrefix()}.json"
+        ]
       loadreport:
-        expand: true
-        cwd: 'reports/'
-        src: ['*.json']
-        dest: 'src/tpl/_data/json/'
+        files:[
+          src: ['reports/loadreport.json']
+          dest: "src/tpl/_data/loadreport_#{getBuildPrefix()}.json"
+        ]
 
     # Assembling
     # ----------
     assemble:
       options:
-        assets    : 'build/'
+        assets    : "#{getBuildPath()}"
         data      : ['src/tpl/_data/**/**/*.{json,yml}','package.json'],
         helpers   : ['src/tpl/_helpers/**/*.js','node_modules/prettify/prettify.js']
         partials  : ['src/tpl/_includes/**/*.{md,html,hbs}','src/tpl/pages/**/*-ajax-*.{md,html,hbs}','src/tpl/pages/**/pop-*.{md,html,hbs}']
@@ -89,7 +98,7 @@ module.exports = (grunt) ->
           expand : true
           cwd    : 'src/tpl/'
           src    : ['pages/**/*.{md,html,hbs}']
-          dest   : 'build/'
+          dest   : getBuildPath()
           ext    : '.html'
         }]
       index:
@@ -97,7 +106,7 @@ module.exports = (grunt) ->
           expand : true
           cwd    : 'src/tpl/'
           src    : ['index.hbs','pages/**/*.{md,html,hbs}']
-          dest   : 'build/'
+          dest   : getBuildPath()
           ext    : '.html'
         }]
 
@@ -161,7 +170,7 @@ module.exports = (grunt) ->
     modernizr:
       dist:
         devFile    : 'remote'
-        outputFile : 'build/js/lib/modernizr.js'
+        outputFile : "#{getBuildPath()}js/lib/modernizr.js"
         parseFiles : true
         extra:
           shiv       : true
@@ -185,7 +194,7 @@ module.exports = (grunt) ->
           mode: "tgz"
         files: [{
           expand: true
-          cwd: 'build/'
+          cwd: getBuildPath()
           src: ['**', '!files/*.{m4v,ogv,webm}']
           dest: './'
         }]
@@ -209,29 +218,26 @@ module.exports = (grunt) ->
           silent: true
         src: ['**/*']
 
+
     # Test / Perfs
     # ------------
     pagespeed_report:
       desktop:
         options:
-          reporters: [ 'json' ]
+          reporters: ['json']
           key: process.env.GAPI_TOKEN
-          url: baseurl
-          paths: pageslist
+          url: pageurl
           locale: 'en_US'
           strategy: 'desktop'
           threshold: 80
-          dest: 'src/tpl/_data'
+          dest: 'reports'
 
     exec:
       loadreport:
         cmd: ->
           binPath = require('phantomjs').path
           loadreportPath = require('loadreport').load_reports
-
-          pageslist.map( (page) ->
-            "#{binPath} #{loadreportPath} #{baseurl}#{page} performance json; mv reports/loadreport.json reports/#{page.replace('html','json')};"
-          ).join ''
+          "#{binPath} #{loadreportPath} #{pageurl} performance json"
 
 
     # Livereload
@@ -266,24 +272,6 @@ module.exports = (grunt) ->
   require('matchdep').filterDev('grunt-*').forEach grunt.loadNpmTasks
   grunt.loadNpmTasks 'assemble'
 
-  grunt.registerTask 'loadreport', ['exec:loadreport','copy:loadreport']
-
-  grunt.registerTask 'travis-deploy', ->
-    this.requires ['build']
-    if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true' and process.env.TRAVIS_PULL_REQUEST is 'false'
-      grunt.log.writeln 'deploy'
-
-      grunt.task.run 'gh-pages:deploy'
-
-      grunt.task.run 'pagespeed_report'
-      grunt.task.run 'loadreport'
-
-      grunt.task.run 'assemble:index'
-      grunt.task.run 'gh-pages:deploy'
-
-    else
-      grunt.log.writeln 'skip deploy'
-
   grunt.registerTask 'libs', ['modernizr','copy:libs']
   grunt.registerTask 'assets', ['clean:assets','clean:css','copy:assets']
 
@@ -291,7 +279,23 @@ module.exports = (grunt) ->
   grunt.registerTask 'js', ['clean:js','clean:tpl','libs','jshint','copy:themejs']
   grunt.registerTask 'html', ['clean:html','assemble:pages']
 
+  grunt.registerTask 'pagespeed', ['pagespeed_report','rename:pagespeed']
+  grunt.registerTask 'loadreport', ['exec:loadreport','rename:loadreport']
+
   grunt.registerTask 'live', ['connect:basic','watch']
   grunt.registerTask 'build', ['clean:all','js','css','html']
   grunt.registerTask 'snapshot', ['build', 'compress:build']
+
+  grunt.registerTask 'travis-deploy', ->
+    this.requires ['build']
+    if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true'
+      grunt.log.writeln 'deploy'
+      grunt.task.run 'gh-pages:deploy'
+      grunt.task.run 'pagespeed'
+      grunt.task.run 'loadreport'
+      # grunt.task.run 'assemble:index'
+      grunt.task.run 'gh-pages:deploy'
+    else
+      grunt.log.writeln 'skip deploy'
+
   grunt.registerTask 'deploy', ['build', 'travis-deploy']
