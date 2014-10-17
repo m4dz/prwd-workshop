@@ -125,27 +125,22 @@ module.exports = (grunt) ->
     # Compass / CSS
     # -------------
     compass:
+      options:
+        config : './config.rb'
+        force : true
+        bundleExec : true
       compile:
-        config     : './config.rb'
-        force      : true
-        bundleExec : true
-        cssDir: "#{getBuildPath()}/css"
-        clean : true
-        trace : false
+        options:
+          cssDir: "#{getBuildPath()}/css/"
+          trace : false
       watch:
-        config     : './config.rb'
-        force      : true
-        bundleExec : true
-        cssDir: "#{getBuildPath()}/css"
-        clean : false
-        trace : true
-        watch : true
+        options:
+          cssDir: "#{getBuildPath()}/css/"
+          trace : true
       doc:
-        config     : './config.rb'
-        force      : true
-        bundleExec : true
-        clean : true
-        trace : false
+        options:
+          cssDir: 'build/css/'
+          trace : false
 
     # RequireJS
     # ---------
