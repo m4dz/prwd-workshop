@@ -28,7 +28,7 @@ module.exports = (grunt) ->
     opts =
       cwd: 'build/'
     content =
-      branches: grunt.file.expand(opts, ['*','!_data','!css'])
+      branches: grunt.file.expand(opts, ['*','!_data','!css', '!*.html'])
     grunt.file.write('src/tpl/_data/tracks.json', JSON.stringify(content))
 
   pageurl = "http://m4dz.github.io/prwd-workshop/#{getBuildPrefix()}/index.html"
