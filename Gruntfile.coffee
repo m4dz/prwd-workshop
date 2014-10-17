@@ -24,7 +24,7 @@ module.exports = (grunt) ->
     path.push getBuildPrefix() if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true'
     path.join('/') + '/'
 
-  baseurl = "http://m4dz.github.io/prwd-workshop/#{getBuildPrefix()}/pages/index.html"
+  pageurl = "http://m4dz.github.io/prwd-workshop/#{getBuildPrefix()}/pages/index.html"
 
 
   # TASKS
