@@ -19,7 +19,7 @@ module.exports = (grunt) ->
   getBuildPath = ->
     path = 'build/'
     if process.env.TRAVIS is 'true' and process.env.TRAVIS_SECURE_ENV_VARS is 'true'
-      path += "#{process.env.TRAVIS_BRANCH}/"
+      path += if process.env.TRAVIS_PULL_REQUEST is not 'false' then "#{process.env.TRAVIS_PULL_REQUEST}/" else "#{process.env.TRAVIS_BRANCH}/"
     return path
 
   pageslist = do ->
