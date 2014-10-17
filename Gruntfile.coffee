@@ -293,7 +293,7 @@ module.exports = (grunt) ->
       grunt.task.run 'gh-pages:deploy'
       grunt.task.run 'pagespeed'
       grunt.task.run 'loadreport'
-      grunt.task.run 'assemble:index'
+      # grunt.task.run 'assemble:index'
       grunt.task.run 'gh-pages:deploy'
     else
       grunt.log.writeln 'skip deploy'
