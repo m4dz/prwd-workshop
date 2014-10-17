@@ -1099,7 +1099,7 @@ input[type="reset"]:active,
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/travis\/build\/m4dz\/prwd-workshop\/src\/scss\/_global\.scss}line{font-family:\00003765}}
 #main > section.one {
   background-color: #81918E;
-  background-image: url("../../images/banner.jpg");
+  background-image: url("../images/banner.jpg");
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/travis\/build\/m4dz\/prwd-workshop\/src\/scss\/_global\.scss}line{font-family:\00003771}}
