@@ -1,0 +1,1003 @@
+{
+	"date": 1413542944200,
+	"task": "desktop",
+	"results": [
+		{
+			"kind": "pagespeedonline#result",
+			"id": "http://m4dz.github.io/prwd-workshop/master/pages/index.html",
+			"responseCode": 200,
+			"title": "HTML5 UP - Prologue - Original",
+			"score": 76,
+			"pageStats": {
+				"numberResources": 28,
+				"numberHosts": 3,
+				"totalRequestBytes": "2254",
+				"numberStaticResources": 24,
+				"htmlResponseBytes": "9538",
+				"cssResponseBytes": "43323",
+				"imageResponseBytes": "291597",
+				"javascriptResponseBytes": "142853",
+				"otherResponseBytes": "53599",
+				"numberJsResources": 7,
+				"numberCssResources": 6
+			},
+			"formattedResults": {
+				"locale": "en_US",
+				"ruleResults": {
+					"AvoidLandingPageRedirects": {
+						"localizedRuleName": "Avoid landing page redirects",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your page has no redirects. Learn more about avoiding landing page redirects.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+										}
+									]
+								}
+							}
+						]
+					},
+					"EnableGzipCompression": {
+						"localizedRuleName": "Enable compression",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "You have compression enabled. Learn more about enabling compression.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+										}
+									]
+								}
+							}
+						]
+					},
+					"LeverageBrowserCaching": {
+						"localizedRuleName": "Leverage browser caching",
+						"ruleImpact": 11.48859126984127,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Setting an expiry date or a maximum age in the HTTP headers for static resources instructs the browser to load previously downloaded resources from local disk rather than over the network."
+								}
+							},
+							{
+								"header": {
+									"format": "Leverage browser caching for the following cacheable resources:",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+										}
+									]
+								},
+								"urls": [
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/font-awesome.min.css"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/images/overlay.png"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-narrow.css"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-normal.css"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-wide.css"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/style.css"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/fonts/fontawesome-webfont.woff?v=4.2.0"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/avatar.jpg"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/banner.jpg"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic02.jpg"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic03.jpg"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic04.jpg"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic05.jpg"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic06.jpg"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic07.jpg"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic08.jpg"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/init.js"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/jquery.formerize.min.js"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/jquery.min.js"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/jquery.scrolly.min.js"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/jquery.scrollzer.min.js"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/skel-layers.min.js"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/skel.min.js"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									}
+								]
+							}
+						]
+					},
+					"MainResourceServerResponseTime": {
+						"localizedRuleName": "Reduce server response time",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your server responded quickly. Learn more about server response time optimization.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/Server"
+										}
+									]
+								}
+							}
+						]
+					},
+					"MinifyCss": {
+						"localizedRuleName": "Minify CSS",
+						"ruleImpact": 0.1305,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Compacting CSS code can save many bytes of data and speed up download and parse times."
+								}
+							},
+							{
+								"header": {
+									"format": "Minify CSS for the following resources to reduce their size by $2 ($3 reduction).",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+										},
+										{
+											"type": "BYTES",
+											"value": "616B"
+										},
+										{
+											"type": "PERCENTAGE",
+											"value": "21%"
+										}
+									]
+								},
+								"urls": [
+									{
+										"result": {
+											"format": "Minifying $1 could save $2 ($3 reduction) after compression.",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/style.css"
+												},
+												{
+													"type": "BYTES",
+													"value": "616B"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "21%"
+												}
+											]
+										}
+									}
+								]
+							}
+						]
+					},
+					"MinifyHTML": {
+						"localizedRuleName": "Minify HTML",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your HTML is minified. Learn more about minifying HTML.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+										}
+									]
+								}
+							}
+						]
+					},
+					"MinifyJavaScript": {
+						"localizedRuleName": "Minify JavaScript",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your JavaScript content is minified. Learn more about minifying JavaScript.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+										}
+									]
+								}
+							}
+						]
+					},
+					"MinimizeRenderBlockingResources": {
+						"localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+						"ruleImpact": 14,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your page has $1 blocking script resources and $2 blocking CSS resources. This causes a delay in rendering your page.",
+									"args": [
+										{
+											"type": "INT_LITERAL",
+											"value": "7"
+										},
+										{
+											"type": "INT_LITERAL",
+											"value": "6"
+										}
+									]
+								}
+							},
+							{
+								"header": {
+									"format": "None of the above-the-fold content on your page could be rendered without waiting for the following resources to load. Try to defer or asynchronously load blocking resources, or inline the critical portions of those resources directly in the HTML."
+								}
+							},
+							{
+								"header": {
+									"format": "Remove render-blocking JavaScript:",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/BlockingJS"
+										}
+									]
+								},
+								"urls": [
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/jquery.min.js"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/jquery.scrolly.min.js"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/jquery.scrollzer.min.js"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/skel.min.js"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/skel-layers.min.js"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/lib/jquery.formerize.min.js"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/js/init.js"
+												}
+											]
+										}
+									}
+								]
+							},
+							{
+								"header": {
+									"format": "Optimize CSS Delivery of the following:",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery"
+										}
+									]
+								},
+								"urls": [
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/style.css"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-wide.css"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-normal.css"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/style-narrow.css"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/font-awesome.min.css"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600"
+												}
+											]
+										}
+									}
+								]
+							}
+						]
+					},
+					"OptimizeImages": {
+						"localizedRuleName": "Optimize images",
+						"ruleImpact": 3.1326,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Properly formatting and compressing images can save many bytes of data."
+								}
+							},
+							{
+								"header": {
+									"format": "Optimize the following images to reduce their size by $2 ($3 reduction).",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+										},
+										{
+											"type": "BYTES",
+											"value": "30.6KiB"
+										},
+										{
+											"type": "PERCENTAGE",
+											"value": "11%"
+										}
+									]
+								},
+								"urls": [
+									{
+										"result": {
+											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/css/images/overlay.png"
+												},
+												{
+													"type": "BYTES",
+													"value": "22KiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "41%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/avatar.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "983B"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "63%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic08.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "983B"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "3%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic03.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "979B"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "9%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic02.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "978B"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "9%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic04.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "978B"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "6%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic06.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "978B"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "11%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic07.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "978B"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "7%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/pic05.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "974B"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "10%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/master/images/banner.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "972B"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "1%"
+												}
+											]
+										}
+									}
+								]
+							}
+						]
+					},
+					"PrioritizeVisibleContent": {
+						"localizedRuleName": "Prioritize visible content",
+						"ruleImpact": 2,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your page requires additional network round trips to render the above-the-fold content. For best performance, reduce the amount of HTML needed to render above-the-fold content."
+								}
+							},
+							{
+								"header": {
+									"format": "The entire HTML response was not sufficient to render the above-the-fold content. This usually indicates that additional resources, loaded after HTML parsing, were required to render above-the-fold content. Prioritize visible content that is needed for rendering above-the-fold by including it directly in the HTML response.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+										}
+									]
+								},
+								"urls": [
+									{
+										"result": {
+											"format": "Only about $1 of the final above-the-fold content could be rendered with the full HTML response $2.",
+											"args": [
+												{
+													"type": "PERCENTAGE",
+													"value": "1%"
+												},
+												{
+													"type": "SNAPSHOT_RECT",
+													"value": "snapshot:11"
+												}
+											]
+										}
+									}
+								]
+							}
+						]
+					}
+				}
+			},
+			"version": {
+				"major": 1,
+				"minor": 15
+			},
+			"uuid": "36f55200-55eb-11e4-b14b-81a85a018797",
+			"threshold": {
+				"success": 80,
+				"warning": 60,
+				"marker": "warning"
+			},
+			"thresholdMarker": "warning"
+		}
+	]
+}
