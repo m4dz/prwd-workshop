@@ -12,6 +12,7 @@ branches:
   - origin
 cache:
   directories:
+  - build
   - src/tpl/_data
 env:
   global:
