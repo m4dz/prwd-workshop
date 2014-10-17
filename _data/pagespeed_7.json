@@ -1,5 +1,5 @@
 {
-	"date": 1413587632876,
+	"date": 1413590051931,
 	"task": "desktop",
 	"results": [
 		{
@@ -7,17 +7,17 @@
 			"id": "http://m4dz.github.io/prwd-workshop/7/index.html",
 			"responseCode": 200,
 			"title": "No more JS dependency to load CSS and apply breakpoints",
-			"score": 82,
+			"score": 0,
 			"pageStats": {
-				"numberResources": 26,
+				"numberResources": 24,
 				"numberHosts": 3,
-				"totalRequestBytes": "2011",
-				"numberStaticResources": 19,
-				"htmlResponseBytes": "9381",
-				"cssResponseBytes": "166039",
-				"imageResponseBytes": "291590",
-				"javascriptResponseBytes": "142658",
-				"otherResponseBytes": "82060",
+				"totalRequestBytes": "1992",
+				"numberStaticResources": 20,
+				"htmlResponseBytes": "10022",
+				"cssResponseBytes": "166041",
+				"imageResponseBytes": "23420311",
+				"javascriptResponseBytes": "142662",
+				"otherResponseBytes": "53599",
 				"numberJsResources": 7,
 				"numberCssResources": 2
 			},
@@ -60,7 +60,7 @@
 					},
 					"LeverageBrowserCaching": {
 						"localizedRuleName": "Leverage browser caching",
-						"ruleImpact": 8.991071428571429,
+						"ruleImpact": 9.490575396825397,
 						"urlBlocks": [
 							{
 								"header": {
@@ -114,7 +114,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/avatar.jpg"
+													"value": "http://m4dz.github.io/prwd-workshop/7/fonts/fontawesome-webfont.woff?v=4.2.0"
 												},
 												{
 													"type": "DURATION",
@@ -129,7 +129,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/banner.jpg"
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_bonnie_meisels.jpg"
 												},
 												{
 													"type": "DURATION",
@@ -144,7 +144,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic02.jpg"
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_charles_s.jpg"
 												},
 												{
 													"type": "DURATION",
@@ -159,7 +159,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic03.jpg"
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_david_marcu.jpg"
 												},
 												{
 													"type": "DURATION",
@@ -174,7 +174,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic04.jpg"
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_jasper_van_der_meij.jpg"
 												},
 												{
 													"type": "DURATION",
@@ -189,7 +189,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic05.jpg"
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_matthew_clark.jpg"
 												},
 												{
 													"type": "DURATION",
@@ -204,7 +204,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic06.jpg"
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_matthew_wiebe.jpg"
 												},
 												{
 													"type": "DURATION",
@@ -219,7 +219,7 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic07.jpg"
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_mia_domenico.jpg"
 												},
 												{
 													"type": "DURATION",
@@ -234,7 +234,22 @@
 											"args": [
 												{
 													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic08.jpg"
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_steven_lewis.jpg"
+												},
+												{
+													"type": "DURATION",
+													"value": "10 minutes"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "$1 ($2)",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_tahomas_lefebvre.jpg"
 												},
 												{
 													"type": "DURATION",
@@ -371,7 +386,7 @@
 					},
 					"MinifyCss": {
 						"localizedRuleName": "Minify CSS",
-						"ruleImpact": 0.1161,
+						"ruleImpact": 0.1162,
 						"urlBlocks": [
 							{
 								"header": {
@@ -607,7 +622,7 @@
 					},
 					"OptimizeImages": {
 						"localizedRuleName": "Optimize images",
-						"ruleImpact": 3.1325999999999996,
+						"ruleImpact": 1541.9237999999998,
 						"urlBlocks": [
 							{
 								"header": {
@@ -624,15 +639,167 @@
 										},
 										{
 											"type": "BYTES",
-											"value": "30.6KiB"
+											"value": "14.7MiB"
 										},
 										{
 											"type": "PERCENTAGE",
-											"value": "11%"
+											"value": "99%"
 										}
 									]
 								},
 								"urls": [
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_david_marcu.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "3.5MiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_jasper_van_der_meij.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "2.7MiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_bonnie_meisels.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "2.7MiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_tahomas_lefebvre.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "1.6MiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_mia_domenico.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "1.6MiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "98%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_matthew_clark.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "1,018.2KiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_charles_s.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "962KiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/7/images/unsplash_steven_lewis.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "589KiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
 									{
 										"result": {
 											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
@@ -648,177 +815,6 @@
 												{
 													"type": "PERCENTAGE",
 													"value": "41%"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/avatar.jpg"
-												},
-												{
-													"type": "BYTES",
-													"value": "983B"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "63%"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic08.jpg"
-												},
-												{
-													"type": "BYTES",
-													"value": "983B"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "3%"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic03.jpg"
-												},
-												{
-													"type": "BYTES",
-													"value": "979B"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "9%"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic02.jpg"
-												},
-												{
-													"type": "BYTES",
-													"value": "978B"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "9%"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic04.jpg"
-												},
-												{
-													"type": "BYTES",
-													"value": "978B"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "6%"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic06.jpg"
-												},
-												{
-													"type": "BYTES",
-													"value": "978B"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "11%"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic07.jpg"
-												},
-												{
-													"type": "BYTES",
-													"value": "978B"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "7%"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/pic05.jpg"
-												},
-												{
-													"type": "BYTES",
-													"value": "974B"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "10%"
-												}
-											]
-										}
-									},
-									{
-										"result": {
-											"format": "Losslessly compressing $1 could save $2 ($3 reduction).",
-											"args": [
-												{
-													"type": "URL",
-													"value": "http://m4dz.github.io/prwd-workshop/7/images/banner.jpg"
-												},
-												{
-													"type": "BYTES",
-													"value": "972B"
-												},
-												{
-													"type": "PERCENTAGE",
-													"value": "1%"
 												}
 											]
 										}
@@ -850,13 +846,13 @@
 				"major": 1,
 				"minor": 15
 			},
-			"uuid": "4353b0b0-5653-11e4-bf0e-97c0c9838620",
+			"uuid": "e79e9cc0-5658-11e4-8e40-4f738bc3a48d",
 			"threshold": {
 				"success": 80,
 				"warning": 60,
-				"marker": "success"
+				"marker": "danger"
 			},
-			"thresholdMarker": "success"
+			"thresholdMarker": "danger"
 		}
 	]
 }
