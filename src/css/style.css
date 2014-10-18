@@ -765,8 +765,15 @@
 
 			#main > section.one
 			{
-				background-color: #81918E;
-				background-image: url('../images/unsplash_matthew_wiebe.jpg');
+				background-color: #8c8376;
+				background-image: url('images/unsplash_matthew_wiebe_lodef.jpg');
+			}
+
+			#main > section.one.overlay
+			{
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAAA3NCSVQICAjb4U/gAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlMA/1uRIrUAAAAJcEhZcwAAAsQAAALEAVuRnQsAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDQvMTMvMTGrW0T6AAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAAAxJREFUCJljaGBgAAABhACBrONIPgAAAABJRU5ErkJggg==), url('images/unsplash_matthew_wiebe_lodef.jpg');
+				background-position: top left, center center;
+				background-size: auto, cover;
 			}
 
 			#main > section.two

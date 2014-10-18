@@ -122,6 +122,14 @@
 
         $.scrollzer(ids, { pad: 200, lastHack: true });
 
+    // Background image cover hot-switching
+    if(window.matchMedia && window.matchMedia("(min-width: 961px)").matches){
+      var top = document.getElementById('top'),
+          bgimg = window.getComputedStyle(top).backgroundImage.match(/images\/([a-zA-Z-_]+\.jpg)/i);
+
+      top.style.backgroundImage = 'url("' + ['.', 'css', 'images', bgimg[1].replace('lodef', 'hidef')].join('/') + '")';
+      top.classList.remove('overlay');
+    }
   });
 
 })(jQuery);
