@@ -10,9 +10,9 @@
 	@import "_style-normal";
 }
 
-@media all and (min-width: 961px) and (max-width: 1320px) {
+// @media all and (min-width: 961px) and (max-width: 1320px) {
 	@import "_style-narrow";
-}
+// }
 
 @media all and (max-width: 960px) {
 	@import "_style-narrower";
