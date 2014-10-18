@@ -1,0 +1,22 @@
+@import "_global";
+@import "_font-awesome";
+
+@media all and (min-width: 961px) and (max-width: 1880px) {
+	@import "_style-wide";
+}
+
+@media all and (min-width: 961px) and (max-width: 1620px) {
+	@import "_style-normal";
+}
+
+@media all and (min-width: 961px) and (max-width: 1320px) {
+	@import "_style-narrow";
+}
+
+@media all and (max-width: 960px) {
+	@import "_style-narrower";
+}
+
+@media all and (max-width: 736px) {
+	@import "_style-mobile";
+}
