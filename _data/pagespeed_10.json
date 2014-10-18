@@ -1,0 +1,205 @@
+{
+	"date": 1413624119637,
+	"task": "desktop",
+	"results": [
+		{
+			"kind": "pagespeedonline#result",
+			"id": "http://m4dz.github.io/prwd-workshop/10/index.html",
+			"responseCode": 404,
+			"title": "Page not found · GitHub Pages",
+			"score": 100,
+			"pageStats": {
+				"numberResources": 1,
+				"numberHosts": 1,
+				"totalRequestBytes": "63",
+				"otherResponseBytes": "9488"
+			},
+			"formattedResults": {
+				"locale": "en_US",
+				"ruleResults": {
+					"AvoidLandingPageRedirects": {
+						"localizedRuleName": "Avoid landing page redirects",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your page has no redirects. Learn more about avoiding landing page redirects.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+										}
+									]
+								}
+							}
+						]
+					},
+					"EnableGzipCompression": {
+						"localizedRuleName": "Enable compression",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "You have compression enabled. Learn more about enabling compression.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+										}
+									]
+								}
+							}
+						]
+					},
+					"LeverageBrowserCaching": {
+						"localizedRuleName": "Leverage browser caching",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "You have enabled browser caching. Learn more about browser caching recommendations.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+										}
+									]
+								}
+							}
+						]
+					},
+					"MainResourceServerResponseTime": {
+						"localizedRuleName": "Reduce server response time",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your server responded quickly. Learn more about server response time optimization.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/Server"
+										}
+									]
+								}
+							}
+						]
+					},
+					"MinifyCss": {
+						"localizedRuleName": "Minify CSS",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your CSS is minified. Learn more about minifying CSS.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+										}
+									]
+								}
+							}
+						]
+					},
+					"MinifyHTML": {
+						"localizedRuleName": "Minify HTML",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your HTML is minified. Learn more about minifying HTML.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+										}
+									]
+								}
+							}
+						]
+					},
+					"MinifyJavaScript": {
+						"localizedRuleName": "Minify JavaScript",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your JavaScript content is minified. Learn more about minifying JavaScript.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+										}
+									]
+								}
+							}
+						]
+					},
+					"MinimizeRenderBlockingResources": {
+						"localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "You have no render-blocking resources. Learn more about removing render-blocking resources.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/BlockingJS"
+										}
+									]
+								}
+							}
+						]
+					},
+					"OptimizeImages": {
+						"localizedRuleName": "Optimize images",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "Your images are optimized. Learn more about optimizing images.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+										}
+									]
+								}
+							}
+						]
+					},
+					"PrioritizeVisibleContent": {
+						"localizedRuleName": "Prioritize visible content",
+						"ruleImpact": 0,
+						"urlBlocks": [
+							{
+								"header": {
+									"format": "You have the above-the-fold content properly prioritized. Learn more about prioritizing visible content.",
+									"args": [
+										{
+											"type": "HYPERLINK",
+											"value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			},
+			"version": {
+				"major": 1,
+				"minor": 15
+			},
+			"uuid": "36a8bcc0-56a8-11e4-983c-03af104ce7af",
+			"threshold": {
+				"success": 80,
+				"warning": 60,
+				"marker": "success"
+			},
+			"thresholdMarker": "success"
+		}
+	]
+}
