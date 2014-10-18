@@ -1,5 +1,5 @@
 {
-	"date": 1413619842643,
+	"date": 1413627856491,
 	"task": "desktop",
 	"results": [
 		{
@@ -7,15 +7,15 @@
 			"id": "http://m4dz.github.io/prwd-workshop/8/index.html",
 			"responseCode": 200,
 			"title": "Font Icon Encoded",
-			"score": 19,
+			"score": 0,
 			"pageStats": {
 				"numberResources": 27,
 				"numberHosts": 3,
 				"totalRequestBytes": "2191",
 				"numberStaticResources": 23,
 				"htmlResponseBytes": "10037",
-				"cssResponseBytes": "30887",
-				"imageResponseBytes": "23420305",
+				"cssResponseBytes": "30886",
+				"imageResponseBytes": "23420310",
 				"javascriptResponseBytes": "142829",
 				"otherResponseBytes": "53599",
 				"numberJsResources": 7,
@@ -711,7 +711,7 @@
 					},
 					"OptimizeImages": {
 						"localizedRuleName": "Optimize images",
-						"ruleImpact": 337.1275,
+						"ruleImpact": 1541.9238,
 						"urlBlocks": [
 							{
 								"header": {
@@ -728,15 +728,72 @@
 										},
 										{
 											"type": "BYTES",
-											"value": "3.2MiB"
+											"value": "14.7MiB"
 										},
 										{
 											"type": "PERCENTAGE",
-											"value": "98%"
+											"value": "99%"
 										}
 									]
 								},
 								"urls": [
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/8/images/unsplash_david_marcu.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "3.5MiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/8/images/unsplash_jasper_van_der_meij.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "2.7MiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/8/images/unsplash_bonnie_meisels.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "2.7MiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
 									{
 										"result": {
 											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
@@ -762,11 +819,49 @@
 											"args": [
 												{
 													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/8/images/unsplash_mia_domenico.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "1.6MiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "98%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
 													"value": "http://m4dz.github.io/prwd-workshop/8/images/unsplash_matthew_clark.jpg"
 												},
 												{
 													"type": "BYTES",
 													"value": "1,018.2KiB"
+												},
+												{
+													"type": "PERCENTAGE",
+													"value": "99%"
+												}
+											]
+										}
+									},
+									{
+										"result": {
+											"format": "Compressing and resizing $1 could save $2 ($3 reduction).",
+											"args": [
+												{
+													"type": "URL",
+													"value": "http://m4dz.github.io/prwd-workshop/8/images/unsplash_charles_s.jpg"
+												},
+												{
+													"type": "BYTES",
+													"value": "962KiB"
 												},
 												{
 													"type": "PERCENTAGE",
@@ -862,7 +957,7 @@
 				"major": 1,
 				"minor": 15
 			},
-			"uuid": "43508750-569e-11e4-bf6b-9f9075e29e6a",
+			"uuid": "ec7ee710-56b0-11e4-ae30-797ac3615566",
 			"threshold": {
 				"success": 80,
 				"warning": 60,
