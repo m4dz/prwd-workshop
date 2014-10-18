@@ -284,6 +284,10 @@
 						border: 0;
 					}
 
+					ul.icons .icon:before{
+						font-size: 1.25em;
+					}
+
 		ol
 		{
 		}
@@ -512,13 +516,6 @@
 		.icon:before {
 			display: inline-block;
 			font-family: FontAwesome;
-			font-size: 1.25em;
-			text-decoration: none;
-			font-style: normal;
-			font-weight: normal;
-			line-height: 1;
-			-webkit-font-smoothing:antialiased;
-			-moz-osx-font-smoothing:grayscale;
 		}
 
 		.icon > .label {
@@ -648,10 +645,10 @@
 						font-size: 0.8em;
 					}
 
-						#nav ul li a span:before
+						#nav ul li a .icon
 						{
 							position: absolute;
-							left: 0;
+							left: 1.5em;
 							color: #41484c;
 							text-align: center;
 							width: 1.25em;
@@ -669,7 +666,7 @@
 						{
 						}
 
-							#nav ul li a.active span:before
+							#nav ul li a.active .icon
 							{
 								color: #e27689;
 							}
