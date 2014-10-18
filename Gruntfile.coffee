@@ -51,6 +51,7 @@ module.exports = (grunt) ->
       css    : ["#{getBuildPath()}css/"]
       html   : ["#{getBuildPath()}*.html"]
       assets : ["#{getBuildPath()}fonts/","#{getBuildPath()}img/","#{getBuildPath()}*.{ico,png}"]
+      images : ["#{getBuildPath()}images/"]
       all    : ["#{getBuildPath()}","src/templates/**/*.js"]
 
     # Copying
@@ -145,6 +146,58 @@ module.exports = (grunt) ->
         options:
           cssDir: 'build/css/'
           trace : false
+
+    # Responsive Images
+    # -----------------
+
+    responsive_images:
+      options:
+        engine: "gm"
+        quality: 75
+      portfolio:
+        options:
+          sizes: [
+            width: 320
+          ,
+            width: 440
+          ,
+            width: 880
+          ,
+            width: 1320
+          ]
+        expand: true
+        src: ['**/*.jpg']
+        cwd: 'src/images/portfolio/'
+        dest: "#{getBuildPath()}images/portfolio/"
+      aboutme:
+        options:
+          sizes: [
+            width: 320
+          ,
+            width: 440
+          ,
+            width: 880
+          ,
+            width: 1320
+          ]
+        expand: true
+        src: ['**/*.jpg']
+        cwd: 'src/images/about_me/'
+        dest: "#{getBuildPath()}images/about_me/"
+      avatar:
+        options:
+          quality: 90
+          sizes: [
+            width: 48
+          ,
+            width: 96
+          ,
+            width: 144
+          ]
+        expand: true
+        src: ['**/*.jpg']
+        cwd: 'src/images/avatar/'
+        dest: "#{getBuildPath()}images/avatar/"
 
     # RequireJS
     # ---------
@@ -292,6 +345,9 @@ module.exports = (grunt) ->
       html:
         files: ['src/tpl/**/*.{md,hbs,html}']
         tasks: ['html']
+      images:
+        files: ['src/images/**/*.{jpg}']
+        tasks: ['images']
 
 
   # DEPS / REGISTER
@@ -305,12 +361,13 @@ module.exports = (grunt) ->
   grunt.registerTask 'css', ['assets','compass:compile','copy:themecss']
   grunt.registerTask 'js', ['clean:js','clean:tpl','libs','jshint','copy:themejs']
   grunt.registerTask 'html', ['clean:html','assemble:pages']
+  grunt.registerTask 'images', ['clean:images', 'responsive_images']
 
   grunt.registerTask 'pagespeed', ['pagespeed_report','rename:pagespeed']
   grunt.registerTask 'loadreport', ['exec:loadreport','rename:loadreport']
 
   grunt.registerTask 'live', ['connect:basic','watch']
-  grunt.registerTask 'build', ['clean:all','js','css','html']
+  grunt.registerTask 'build', ['clean:all','js','css','html','images']
   grunt.registerTask 'snapshot', ['build','compress:build']
 
   grunt.registerTask 'travis-deploy', ->

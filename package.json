@@ -28,6 +28,7 @@
     "grunt-gh-pages": "^0.9.1",
     "grunt-modernizr": "^0.5.2",
     "grunt-pagespeed-report": "git+https://github.com/lwhiteley/grunt-pagespeed-report.git",
+    "grunt-responsive-images": "^0.1.4",
     "loadreport": "git+https://github.com/wesleyhales/loadreport.git",
     "matchdep": "^0.3.0",
     "phantomjs": "^1.9.10",

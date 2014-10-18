@@ -26,6 +26,8 @@ L'environnement est défini par un ensemble de tâches [grunt](http://gruntjs.co
 
 Pour utiliser le code présent, vous avez besoin d'un environnement disposant de Ruby, avec les droits pour installer des gems, de [Bundler](http://bundler.io/), de [Node.js](http://www.nodejs.org/) et son gestionnaire [NPM](https://www.npmjs.org/), et de l'utilitaire [CLI de grunt](http://gruntjs.com/getting-started#installing-the-cli).
 
+Vous avez besoin de plus d'un outil de traitement graphique tel que GraphicsMagick ou ImageMagick pour faire fonctionner la tâche [grunt-responsive-images](https://github.com/andismith/grunt-responsive-images).
+
 Reportez-vous à la documentation de votre OS pour installer ces pré-requis.
 
 
