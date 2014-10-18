@@ -47,12 +47,12 @@ layout: doc
 				<td>{{ results.0.pageStats.numberStaticResources }}</td>
 				{{/at}}
 				{{#at .. 'loadreport' this}}
-				<td>{{ domReadystateLoading }}</td>
-				<td>{{ domReadystateInteractive }}</td>
-				<td>{{windowOnload}}</td>
-				<td>{{elapsedLoadTime}}</td>
-				<td>{{totalResourcesTime}}</td>
-				<td>{{totalResourcesSize}}</td>
+				<td>{{ domReadystateLoading }}ms</td>
+				<td>{{ domReadystateInteractive }}ms</td>
+				<td>{{windowOnload}}ms</td>
+				<td>{{elapsedLoadTime}}ms</td>
+				<td>{{totalResourcesTime}}ms</td>
+				<td>{{totalResourcesSize}}ms</td>
 				<td><a href="{{slowestResource}}">view it</a></td>
 				<td><a href="{{largestResource}}">view it</a></td>
 				{{/at}}
